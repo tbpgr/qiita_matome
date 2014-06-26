@@ -53,16 +53,16 @@ excludes []
 
     # == TODO: write your gem's specific contents
     def execute
-      src = read_dsl
-      dsl = QiitaMatome::Dsl.new
-      dsl.instance_eval src
+      dsl = read_dsl
 
       # TODO: implement your gem's specific logic
     end
 
     private
     def read_dsl
-      File.open(QIITA_MATOME_FILE) { |f|f.read }
+      src = File.open(QIITA_MATOME_FILE) { |f|f.read }
+      dsl = QiitaMatome::Dsl.new
+      dsl.instance_eval src
     end
   end
 end
