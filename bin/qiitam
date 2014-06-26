@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+require 'qiita_matome_core'
+require 'qiita_matome/version'
+require 'thor'
+
+module QiitaMatome
+  # = QiitaMatome CLI
+  class CLI < Thor
+    class_option :help, type: :boolean, aliases: '-h', desc: 'help message.'
+    class_option :version, type: :boolean, desc: 'version'
+
+    desc 'execute', 'TODO: write your desc'
+    def execute
+      QiitaMatome::Core.new.execute
+    end
+
+    desc 'init', 'generate Qiitamatomefile'
+    def init
+      QiitaMatome::Core.new.init
+    end
+
+    desc 'version', 'version'
+    def version
+      p QiitaMatome::VERSION
+    end
+  end
+end
+
+QiitaMatome::CLI.start(ARGV)
