@@ -14,3 +14,12 @@
 - [ ] Displayerの全件display処理を実装する。Displayer#display_list(qiita_articles)
 - [ ] FileWriterの初期化処理を実装する。FileWriter.new(output_file)
 - [ ] FileWriterの出力処理処理を実装する。FileWriter#write(markdown)。ディレクトリがない場合は作成する
+- [ ] coreの実装
+- [ ] binの実装
+- [ ] gemの動作確認
+- [ ] READMEの更新（gemの動作結果を反映）
+- [ ] TravisCIの導入
+- [ ] CodeClimateの導入
+- [ ] Coverallsの導入
+- [ ] リファクタリング
+- [ ] RubyGemsへ version 0.0.1 をリリース
