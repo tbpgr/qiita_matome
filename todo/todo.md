@@ -1,0 +1,16 @@
+- [ ] QiitaAPIから指定ユーザーのjsonを取得する QiitaJsonLoader#load(user)。
+- [ ] QiitaArticle Modelを作成する。メンバ変数はtitle/url(Hash部分のみ)/created_at/updated_at/tags/stock_users
+- [ ] QiitaArticle Modelの初期化処理を作成する。QiitaArticle#initialize(json)
+- [ ] QiitaArticles Modelを作成する。Enumerableをinclude。メンバ変数は qiita_articles
+- [ ] QiitaArticles Modelの QiitaArticles#load_json(json) を実装する。QiitaAPIから取得したjsonをQiitaArticleの配列に変換してqiita_articlesに保持する
+- [ ] QiitaArticles Modelの QiitaArticles#<<(qiita_articles) メソッドを実装する。qiita_articles に QiitaArticle を追加する。
+- [ ] QiitaArticles Modelの QiitaArticles#filter_by_tag(tag) を実装する。immutable
+- [ ] QiitaAPIから指定ユーザーのjsonを取得する QiitaJsonLoader#argicles(tag)。jsonの内容をQiitaArticleに設定し、QiitaArticlesに追加していく
+- [ ] Sorterの初期化処理を実装する。Sorter.new(qiita_articles, sort_type)
+- [ ] Sorterのsort処理を実装する。Sorter#sort
+- [ ] Displayerの初期化処理を実装する。Displayer.new(display_columns)
+- [ ] Displayerのタイトル出力処理を実装する。Displayer#display_title(title)
+- [ ] Displayerの1件display処理を実装する。Displayer#display_list_line(qiita_article)
+- [ ] Displayerの全件display処理を実装する。Displayer#display_list(qiita_articles)
+- [ ] FileWriterの初期化処理を実装する。FileWriter.new(output_file)
+- [ ] FileWriterの出力処理処理を実装する。FileWriter#write(markdown)。ディレクトリがない場合は作成する
