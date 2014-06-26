@@ -3,7 +3,7 @@
 module QiitaMatome
   #  QiitaMatome::Sort
   module Sort
-    # QiitaMatome::Sort::Const
+    # QiitaMatome::Sort::Consts
     module Consts
       CREATE_DATE_ASC = 'create_date_asc'.freeze
       CREATE_DATE_DESC = 'create_date_desc'.freeze
