@@ -6,7 +6,9 @@
 - [x] QiitaArticles Modelの QiitaArticles#<<(article) メソッドを実装する。
 - [x] QiitaArticles Modelの QiitaArticles#+(articles) メソッドを実装する。
 - [x] QiitaArticles Modelの QiitaArticles#filter_by_tag(tag) を実装する。immutable
-- [ ] Sorterの初期化処理を実装する。Sorter.new(articles, sort_type)
+- [x] Sorterの初期化処理を実装する。Sorter.new(articles, sort_type)
+- [ ] Sorterの初期化処理を実装する。articlesのValidation
+- [ ] Sorterの初期化処理を実装する。sort_typeのValidation
 - [ ] Sorterのsort処理を実装する。Sorter#sort
 - [ ] Displayerの初期化処理を実装する。Displayer.new(display_columns)
 - [ ] Displayerのタイトル出力処理を実装する。Displayer#display_title(title)
