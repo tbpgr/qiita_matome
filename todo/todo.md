@@ -1,18 +1,17 @@
-- [ ] QiitaAPIから指定ユーザーのjsonを取得する QiitaJsonLoader#load(user)。
+- [x] QiitaAPIから指定ユーザーのjsonを取得する QiitaJsonLoader#load(user)。
 - [x] QiitaArticle Modelを作成する。メンバ変数はtitle/uui/created_at/updated_at/tags/stock_users
 - [x] QiitaArticle Modelの初期化処理を作成する。QiitaArticle#initialize(options)
-- [ ] QiitaArticles Modelを作成する。Enumerableをinclude。メンバ変数は articles
-- [ ] QiitaArticles Modelの QiitaArticles#initialize(articles) を実装する。
-- [ ] QiitaArticles Modelの QiitaArticles#<<(article) メソッドを実装する。
-- [ ] QiitaArticles Modelの QiitaArticles#+(articles) メソッドを実装する。
-- [ ] QiitaArticles Modelの QiitaArticles#filter_by_tag(tag) を実装する。immutable
-- [ ] QiitaAPIから指定ユーザーのjsonを取得する QiitaJsonLoader#argicles(tag)。jsonの内容をQiitaArticleに設定し、QiitaArticlesに追加していく
-- [ ] Sorterの初期化処理を実装する。Sorter.new(qiita_articles, sort_type)
+- [x] QiitaArticles Modelを作成する。Enumerableをinclude。メンバ変数は articles
+- [x] QiitaArticles Modelの QiitaArticles#initialize(articles) を実装する。
+- [x] QiitaArticles Modelの QiitaArticles#<<(article) メソッドを実装する。
+- [x] QiitaArticles Modelの QiitaArticles#+(articles) メソッドを実装する。
+- [x] QiitaArticles Modelの QiitaArticles#filter_by_tag(tag) を実装する。immutable
+- [ ] Sorterの初期化処理を実装する。Sorter.new(articles, sort_type)
 - [ ] Sorterのsort処理を実装する。Sorter#sort
 - [ ] Displayerの初期化処理を実装する。Displayer.new(display_columns)
 - [ ] Displayerのタイトル出力処理を実装する。Displayer#display_title(title)
 - [ ] Displayerの1件display処理を実装する。Displayer#display_list_line(qiita_article)
-- [ ] Displayerの全件display処理を実装する。Displayer#display_list(qiita_articles)
+- [ ] Displayerの全件display処理を実装する。Displayer#display_list(articles)
 - [ ] FileWriterの初期化処理を実装する。FileWriter.new(output_file)
 - [ ] FileWriterの出力処理処理を実装する。FileWriter#write(markdown)。ディレクトリがない場合は作成する
 - [ ] coreの実装
