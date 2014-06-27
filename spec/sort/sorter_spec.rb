@@ -16,8 +16,15 @@ describe QiitaMatome::Sort::Sorter do
       },
       {
         case_no: 2,
-        case_title: 'invalid article class "String"',
+        case_title: 'invalid articles class "String"',
         articles: 'String',
+        sort_type: QiitaMatome::Sort::Consts::CREATE_DATE_ASC,
+        expect_error: true
+      },
+      {
+        case_no: 3,
+        case_title: 'invalid article class "String"',
+        articles: [QiitaMatome::Article.new, 'String'],
         sort_type: QiitaMatome::Sort::Consts::CREATE_DATE_ASC,
         expect_error: true
       }

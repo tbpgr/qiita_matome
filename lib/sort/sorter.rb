@@ -7,10 +7,12 @@ module QiitaMatome
     # QiitaMatome::Sort::Sorter
     class Sorter
       attr_reader :articles, :sort_type
-      ARTICLE_TYPE_ERROR = "invalid argument type '%s'. article must be Array"
+      ARTICLES_TYPE_ERROR = "invalid argument type '%s'. article must be Array"
+      ARTICLE_TYPE_ERROR = "invalid argument type '%s'. article must be Article"
 
       def initialize(articles, sort_type = Consts::UPDATE_DATE_DESC)
         validate_articles(articles)
+        validate_article(articles)
         @articles = articles
         @sort_type = sort_type
       end
@@ -19,7 +21,15 @@ module QiitaMatome
 
       def validate_articles(articles)
         return if articles.is_a?(Array)
-        fail ArgumentError, format(ARTICLE_TYPE_ERROR, articles.class)
+        fail ArgumentError, format(ARTICLES_TYPE_ERROR, articles.class)
+      end
+
+      def validate_article(articles)
+        return if articles.empty?
+        articles.each do |article|
+          next if article.is_a?(Article)
+          fail ArgumentError, format(ARTICLE_TYPE_ERROR, article.class)
+        end
       end
     end
   end
