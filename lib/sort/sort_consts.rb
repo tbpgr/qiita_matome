@@ -13,6 +13,18 @@ module QiitaMatome
       TITLE_DATE_DESC = 'title_date_desc'.freeze
       STOCKED_DATE_ASC = 'stocked_date_asc'.freeze
       STOCKED_DATE_DESC = 'stocked_date_desc'.freeze
+      ALL_TYPES = [
+        CREATE_DATE_ASC,
+        CREATE_DATE_DESC,
+        UPDATE_DATE_ASC,
+        UPDATE_DATE_DESC,
+        TITLE_DATE_ASC,
+        TITLE_DATE_DESC,
+        STOCKED_DATE_ASC,
+        STOCKED_DATE_DESC
+      ]
     end
   end
 end
+
+print QiitaMatome::Sort::Consts.constants

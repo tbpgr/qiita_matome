@@ -27,6 +27,13 @@ describe QiitaMatome::Sort::Sorter do
         articles: [QiitaMatome::Article.new, 'String'],
         sort_type: QiitaMatome::Sort::Consts::CREATE_DATE_ASC,
         expect_error: true
+      },
+      {
+        case_no: 4,
+        case_title: 'invalid sort_type "invalid"',
+        articles: [QiitaMatome::Article.new, QiitaMatome::Article.new],
+        sort_type: 'invalid',
+        expect_error: true
       }
     ]
 

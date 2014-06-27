@@ -9,7 +9,7 @@
 - [x] Sorterの初期化処理を実装する。Sorter.new(articles, sort_type)
 - [x] Sorterの初期化処理を実装する。articlesのValidation
 - [x] Sorterの初期化処理を実装する。articlesの配列内のarticleのValidation
-- [ ] Sorterの初期化処理を実装する。sort_typeのValidation
+- [x] Sorterの初期化処理を実装する。sort_typeのValidation
 - [ ] Sorterのsort処理を実装する。Sorter#sort
 - [ ] Displayerの初期化処理を実装する。Displayer.new(display_columns)
 - [ ] Displayerのタイトル出力処理を実装する。Displayer#display_title(title)
