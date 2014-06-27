@@ -13,6 +13,13 @@ describe QiitaMatome::Sort::Sorter do
         case_title: 'valid args',
         articles: [QiitaMatome::Article.new, QiitaMatome::Article.new],
         sort_type: QiitaMatome::Sort::Consts::CREATE_DATE_ASC
+      },
+      {
+        case_no: 2,
+        case_title: 'invalid article class "String"',
+        articles: 'String',
+        sort_type: QiitaMatome::Sort::Consts::CREATE_DATE_ASC,
+        expect_error: true
       }
     ]
 
@@ -22,6 +29,10 @@ describe QiitaMatome::Sort::Sorter do
           case_before c
 
           # -- given --
+          if c[:expect_error]
+            -> { QiitaMatome::Sort::Sorter.new(c[:articles], c[:sort_type]) }.should raise_error(ArgumentError)
+            next
+          end
           qss = QiitaMatome::Sort::Sorter.new(c[:articles], c[:sort_type])
 
           # -- when --
