@@ -14,9 +14,7 @@ module QiitaMatome
       $VERBOSE = tmp_verbose
       html = open("https://qiita.com/api/v1/users/#{user}/items").read
       articles = JSON.parser.new(html)
-      @articles = articles.parse()
-
-      # TODO: 1件ロード確認済み。全件ロード処理にする。
+      @articles = articles.parse
     end
   end
 end
