@@ -13,6 +13,15 @@ module QiitaMatome
       SORT_TYPE_ERROR = "invalid sort_type '%s'. sort_type must be 'create_date_asc', 'create_date_desc', 'update_date_asc', 'update_date_desc', 'title_date_asc', 'title_date_desc', 'stocked_asc' or 'stocked_desc'"
       # rubocop:enable LineLength
 
+      SORT_PATTERNS = {
+        Consts::CREATE_DATE_ASC => { send_method: :sort_asc, sort_key: :created_at },
+        Consts::CREATE_DATE_DESC => { send_method: :sort_desc, sort_key: :created_at },
+        Consts::UPDATE_DATE_ASC => { send_method: :sort_asc, sort_key: :updated_at },
+        Consts::UPDATE_DATE_DESC => { send_method: :sort_desc, sort_key: :updated_at },
+        Consts::TITLE_ASC => { send_method: :sort_asc, sort_key: :title },
+        Consts::TITLE_DESC => { send_method: :sort_desc, sort_key: :title }
+      }
+
       def initialize(articles, sort_type = Consts::UPDATE_DATE_DESC)
         validate_articles(articles)
         validate_article(articles)
@@ -22,13 +31,8 @@ module QiitaMatome
       end
 
       def sort
-        case @sort_type
-        when Consts::CREATE_DATE_ASC then sort_asc(:created_at)
-        when Consts::CREATE_DATE_DESC then sort_desc(:created_at)
-        when Consts::UPDATE_DATE_ASC then sort_asc(:updated_at)
-        when Consts::UPDATE_DATE_DESC then sort_desc(:updated_at)
-        when Consts::TITLE_ASC then sort_asc(:title)
-        end
+        sort_pattern = SORT_PATTERNS[@sort_type]
+        send(sort_pattern[:send_method], sort_pattern[:sort_key])
       end
 
       private
