@@ -25,6 +25,8 @@ module QiitaMatome
         case @sort_type
         when Consts::CREATE_DATE_ASC
           @articles.sort_by! { |e|e.created_at }
+        when Consts::CREATE_DATE_DESC
+          @articles = @articles.sort_by { |e|e.created_at }.reverse
         else
         end
       end
