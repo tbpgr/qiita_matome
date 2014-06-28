@@ -101,7 +101,7 @@ describe QiitaMatome::Sort::Sorter do
     cases = [
       {
         case_no: 1,
-        case_title: 'valid args',
+        case_title: 'create date asc',
         articles: AITICLES,
         sort_type: QiitaMatome::Sort::Consts::CREATE_DATE_ASC,
         expected: [
