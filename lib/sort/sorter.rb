@@ -23,13 +23,10 @@ module QiitaMatome
 
       def sort
         case @sort_type
-        when Consts::CREATE_DATE_ASC
-          @articles.sort_by! { |e|e.created_at }
-        when Consts::CREATE_DATE_DESC
-          @articles = @articles.sort_by { |e|e.created_at }.reverse
-        when Consts::UPDATE_DATE_ASC
-          @articles.sort_by! { |e|e.updated_at }
-        else
+        when Consts::CREATE_DATE_ASC then sort_asc(:created_at)
+        when Consts::CREATE_DATE_DESC then sort_desc(:created_at)
+        when Consts::UPDATE_DATE_ASC then sort_asc(:updated_at)
+        when Consts::UPDATE_DATE_DESC then sort_desc(:updated_at)
         end
       end
 
@@ -51,6 +48,14 @@ module QiitaMatome
       def validate_sort_type(sort_type)
         return if Consts::ALL_TYPES.include?(sort_type)
         fail ArgumentError, format(SORT_TYPE_ERROR, sort_type)
+      end
+
+      def sort_asc(asc_key)
+        @articles.sort_by! { |e|e.send(asc_key) }
+      end
+
+      def sort_desc(desc_key)
+        @articles = @articles.sort_by { |e|e.send(desc_key) }.reverse
       end
     end
   end
