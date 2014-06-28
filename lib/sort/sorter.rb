@@ -10,7 +10,7 @@ module QiitaMatome
       # rubocop:disable LineLength
       ARTICLES_CLASS_ERROR = "invalid argument class '%s'. articles must be Array"
       ARTICLE_CLASS_ERROR = "invalid argument class '%s'. article must be Article"
-      SORT_TYPE_ERROR = "invalid sort_type '%s'. sort_type must be 'create_date_asc', 'create_date_desc', 'update_date_asc', 'update_date_desc', 'title_date_asc', 'title_date_desc', 'stocked_date_asc' or 'stocked_date_desc'"
+      SORT_TYPE_ERROR = "invalid sort_type '%s'. sort_type must be 'create_date_asc', 'create_date_desc', 'update_date_asc', 'update_date_desc', 'title_date_asc', 'title_date_desc', 'stocked_asc' or 'stocked_desc'"
       # rubocop:enable LineLength
 
       def initialize(articles, sort_type = Consts::UPDATE_DATE_DESC)
