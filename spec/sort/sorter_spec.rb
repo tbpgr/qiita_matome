@@ -73,30 +73,30 @@ describe QiitaMatome::Sort::Sorter do
 
   context :sort do
     AITICLES = [
-      QiitaMatome::Article.new({
-        :user => {"id" => 99999,"url_name" => "tbpgr","profile_image_url" => ""},
-        :title => "title1",
-        :created_at => "2014-06-18 22:37:54 +0900",
-        :updated_at => "2014-06-26 02:25:11 +0900",
-        :tags => [{"name" => "Ruby","url_name" => "ruby","icon_url" => "","versions" => []}],
-        :stock_count => 2
-      }),
-      QiitaMatome::Article.new({
-        :user => {"id" => 99999,"url_name" => "tbpgr","profile_image_url" => ""},
-        :title => "title2",
-        :created_at => "2014-06-18 22:37:53 +0900",
-        :updated_at => "2014-06-26 02:25:09 +0900",
-        :tags => [{"name" => "Ruby","url_name" => "ruby","icon_url" => "","versions" => []}],
-        :stock_count => 3
-      }),
-      QiitaMatome::Article.new({
-        :user => {"id" => 99999,"url_name" => "tbpgr","profile_image_url" => ""},
-        :title => "title3",
-        :created_at => "2014-06-18 22:37:52 +0900",
-        :updated_at => "2014-06-26 02:25:10 +0900",
-        :tags => [{"name" => "Ruby","url_name" => "ruby","icon_url" => "","versions" => []}],
-        :stock_count => 1
-      })
+      QiitaMatome::Article.new(
+        user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
+        title: 'title1',
+        created_at: '2014-06-18 22:37:54 +0900',
+        updated_at: '2014-06-26 02:25:11 +0900',
+        tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
+        stock_count: 2
+      ),
+      QiitaMatome::Article.new(
+        user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
+        title: 'title2',
+        created_at: '2014-06-18 22:37:53 +0900',
+        updated_at: '2014-06-26 02:25:09 +0900',
+        tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
+        stock_count: 3
+      ),
+      QiitaMatome::Article.new(
+        user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
+        title: 'title3',
+        created_at: '2014-06-18 22:37:52 +0900',
+        updated_at: '2014-06-26 02:25:10 +0900',
+        tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
+        stock_count: 1
+      )
     ]
     cases = [
       {
@@ -105,30 +105,30 @@ describe QiitaMatome::Sort::Sorter do
         articles: AITICLES,
         sort_type: QiitaMatome::Sort::Consts::CREATE_DATE_ASC,
         expected: [
-          QiitaMatome::Article.new({
-            :user =>{"id" =>99999,"url_name" =>"tbpgr","profile_image_url" =>""},
-            :title =>"title3",
-            :created_at =>"2014-06-18 22:37:52 +0900",
-            :updated_at =>"2014-06-26 02:25:10 +0900",
-            :tags =>[{"name" =>"Ruby","url_name" =>"ruby","icon_url" =>"","versions" =>[]}],
-            :stock_count =>1
-          }),
-          QiitaMatome::Article.new({
-            :user =>{"id" =>99999,"url_name" =>"tbpgr","profile_image_url" =>""},
-            :title =>"title2",
-            :created_at =>"2014-06-18 22:37:53 +0900",
-            :updated_at =>"2014-06-26 02:25:09 +0900",
-            :tags =>[{"name" =>"Ruby","url_name" =>"ruby","icon_url" =>"","versions" =>[]}],
-            :stock_count =>3
-          }),
-          QiitaMatome::Article.new({
-            :user =>{"id" =>99999,"url_name" =>"tbpgr","profile_image_url" =>""},
-            :title =>"title1",
-            :created_at =>"2014-06-18 22:37:54 +0900",
-            :updated_at =>"2014-06-26 02:25:11 +0900",
-            :tags =>[{"name" =>"Ruby","url_name" =>"ruby","icon_url" =>"","versions" =>[]}],
-            :stock_count =>2
-          })
+          QiitaMatome::Article.new(
+            user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
+            title: 'title3',
+            created_at: '2014-06-18 22:37:52 +0900',
+            updated_at: '2014-06-26 02:25:10 +0900',
+            tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
+            stock_count: 1
+          ),
+          QiitaMatome::Article.new(
+            user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
+            title: 'title2',
+            created_at: '2014-06-18 22:37:53 +0900',
+            updated_at: '2014-06-26 02:25:09 +0900',
+            tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
+            stock_count: 3
+          ),
+          QiitaMatome::Article.new(
+            user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
+            title: 'title1',
+            created_at: '2014-06-18 22:37:54 +0900',
+            updated_at: '2014-06-26 02:25:11 +0900',
+            tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
+            stock_count: 2
+          )
         ]
       },
       {
@@ -137,30 +137,30 @@ describe QiitaMatome::Sort::Sorter do
         articles: AITICLES,
         sort_type: QiitaMatome::Sort::Consts::CREATE_DATE_DESC,
         expected: [
-          QiitaMatome::Article.new({
-            :user =>{"id" =>99999,"url_name" =>"tbpgr","profile_image_url" =>""},
-            :title =>"title1",
-            :created_at =>"2014-06-18 22:37:54 +0900",
-            :updated_at =>"2014-06-26 02:25:11 +0900",
-            :tags =>[{"name" =>"Ruby","url_name" =>"ruby","icon_url" =>"","versions" =>[]}],
-            :stock_count =>2
-          }),
-          QiitaMatome::Article.new({
-            :user =>{"id" =>99999,"url_name" =>"tbpgr","profile_image_url" =>""},
-            :title =>"title2",
-            :created_at =>"2014-06-18 22:37:53 +0900",
-            :updated_at =>"2014-06-26 02:25:09 +0900",
-            :tags =>[{"name" =>"Ruby","url_name" =>"ruby","icon_url" =>"","versions" =>[]}],
-            :stock_count =>3
-          }),
-          QiitaMatome::Article.new({
-            :user =>{"id" =>99999,"url_name" =>"tbpgr","profile_image_url" =>""},
-            :title =>"title3",
-            :created_at =>"2014-06-18 22:37:52 +0900",
-            :updated_at =>"2014-06-26 02:25:10 +0900",
-            :tags =>[{"name" =>"Ruby","url_name" =>"ruby","icon_url" =>"","versions" =>[]}],
-            :stock_count =>1
-          })
+          QiitaMatome::Article.new(
+            user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
+            title: 'title1',
+            created_at: '2014-06-18 22:37:54 +0900',
+            updated_at: '2014-06-26 02:25:11 +0900',
+            tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
+            stock_count: 2
+          ),
+          QiitaMatome::Article.new(
+            user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
+            title: 'title2',
+            created_at: '2014-06-18 22:37:53 +0900',
+            updated_at: '2014-06-26 02:25:09 +0900',
+            tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
+            stock_count: 3
+          ),
+          QiitaMatome::Article.new(
+            user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
+            title: 'title3',
+            created_at: '2014-06-18 22:37:52 +0900',
+            updated_at: '2014-06-26 02:25:10 +0900',
+            tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
+            stock_count: 1
+          )
         ]
       }
     ]
