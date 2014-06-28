@@ -21,6 +21,14 @@ module QiitaMatome
         @sort_type = sort_type
       end
 
+      def sort
+        case @sort_type
+        when Consts::CREATE_DATE_ASC
+          @articles.sort_by! { |e|e.created_at }
+        else
+        end
+      end
+
       private
 
       def validate_articles(articles)
