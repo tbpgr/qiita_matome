@@ -1,5 +1,5 @@
 - [x] QiitaAPIから指定ユーザーのjsonを取得する QiitaJsonLoader#load(user)。
-- [x] QiitaArticle Modelを作成する。メンバ変数はtitle/uui/created_at/updated_at/tags/stock_users
+- [x] QiitaArticle Modelを作成する。メンバ変数はtitle/uui/created_at/updated_at/tags/stock_count
 - [x] QiitaArticle Modelの初期化処理を作成する。QiitaArticle#initialize(options)
 - [x] QiitaArticles Modelを作成する。Enumerableをinclude。メンバ変数は articles
 - [x] QiitaArticles Modelの QiitaArticles#initialize(articles) を実装する。

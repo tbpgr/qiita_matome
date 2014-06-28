@@ -1,7 +1,7 @@
 module QiitaMatome
   # QiitaMatome::Article
   class Article
-    attr_accessor :user, :title, :uuid, :created_at, :updated_at, :tags, :stock_users # rubocop:disable LineLength
+    attr_accessor :user, :title, :uuid, :created_at, :updated_at, :tags, :stock_count # rubocop:disable LineLength
 
     def initialize(options = {})
       @user = options[:user]
@@ -10,7 +10,7 @@ module QiitaMatome
       @created_at = options[:created_at]
       @updated_at = options[:updated_at]
       @tags = options[:tags]
-      @stock_users = options[:stock_users]
+      @stock_count = options[:stock_count]
       yield(self) if block_given?
     end
   end
