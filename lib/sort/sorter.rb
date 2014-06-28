@@ -27,6 +27,7 @@ module QiitaMatome
         when Consts::CREATE_DATE_DESC then sort_desc(:created_at)
         when Consts::UPDATE_DATE_ASC then sort_asc(:updated_at)
         when Consts::UPDATE_DATE_DESC then sort_desc(:updated_at)
+        when Consts::TITLE_ASC then sort_asc(:title)
         end
       end
 
