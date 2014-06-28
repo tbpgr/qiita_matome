@@ -20,7 +20,8 @@ module QiitaMatome
         Consts::UPDATE_DATE_DESC => { send_method: :sort_desc, sort_key: :updated_at },
         Consts::TITLE_ASC => { send_method: :sort_asc, sort_key: :title },
         Consts::TITLE_DESC => { send_method: :sort_desc, sort_key: :title },
-        Consts::STOCKED_ASC => { send_method: :sort_asc, sort_key: :stock_count }
+        Consts::STOCKED_ASC => { send_method: :sort_asc, sort_key: :stock_count },
+        Consts::STOCKED_DESC => { send_method: :sort_desc, sort_key: :stock_count }
       }
 
       def initialize(articles, sort_type = Consts::UPDATE_DATE_DESC)
