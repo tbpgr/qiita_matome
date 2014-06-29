@@ -12,7 +12,7 @@
 - [x] Sorterの初期化処理を実装する。sort_typeのValidation
 - [x] Sorterのsort処理を実装する。Sorter#sort
 - [x] Displayerの初期化処理を実装する。Displayer.new(articles, display_columns)
-- [ ] Displayerのタイトル出力処理を実装する。Displayer#display_title(title)
+- [x] Displayerのタイトル出力処理を実装する。Displayer#display_title(title)
 - [ ] Displayerの1件display処理を実装する。Displayer#display_list_line(qiita_article)
 - [ ] Displayerの全件display処理を実装する。Displayer#display_list(articles)
 - [ ] FileWriterの初期化処理を実装する。FileWriter.new(output_file)

@@ -43,6 +43,13 @@ describe QiitaMatome::Display::Displayer do
         display_columns: 'title',
         expected_display_columns: [:title]
       },
+      {
+        case_no: 6,
+        case_title: 'invalid display_columns than haven\'t to_sym method.',
+        articles: [QiitaMatome::Article.new, QiitaMatome::Article.new],
+        display_columns: 1,
+        expect_error: true
+      },
     ]
 
     cases.each do |c|
@@ -64,6 +71,45 @@ describe QiitaMatome::Display::Displayer do
           # -- then --
           expect(actual_articles).to eq(c[:articles])
           expect(actual_display_columns).to eq(c[:expected_display_columns])
+        ensure
+          case_after c
+        end
+      end
+
+      def case_before(c)
+        # implement each case before
+      end
+
+      def case_after(c)
+        # implement each case after
+      end
+    end
+  end
+
+  context :display_title do
+    cases = [
+      {
+        case_no: 1,
+        case_title: 'valid args',
+        articles: [QiitaMatome::Article.new, QiitaMatome::Article.new],
+        title: 'title1',
+        expected: '# title1'
+      }
+    ]
+
+    cases.each do |c|
+      it "|case_no=#{c[:case_no]}|case_title=#{c[:case_title]}" do
+        begin
+          case_before c
+
+          # -- given --
+          qdd = QiitaMatome::Display::Displayer.new(c[:title], c[:articles])
+
+          # -- when --
+          actual = qdd.display_title
+
+          # -- then --
+          expect(actual).to eq(c[:expected])
         ensure
           case_after c
         end

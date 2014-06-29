@@ -26,5 +26,3 @@ module QiitaMatome
     end
   end
 end
-
-print QiitaMatome::Sort::Consts.constants

@@ -20,6 +20,10 @@ module QiitaMatome
         @articles = articles
         @display_columns = symbolized_display_columns
       end
+
+      def display_title
+        "# #{@title}"
+      end
     end
   end
 end
