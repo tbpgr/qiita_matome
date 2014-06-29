@@ -1,5 +1,6 @@
 # encoding: utf-8
 require 'sort/sort_consts'
+require 'validators/article_validator'
 require 'validators/articles_validator'
 
 module QiitaMatome
@@ -9,7 +10,6 @@ module QiitaMatome
     class Sorter
       attr_reader :articles, :sort_type
       # rubocop:disable LineLength
-      ARTICLE_CLASS_ERROR = "invalid argument class '%s'. article must be Article"
       SORT_TYPE_ERROR = "invalid sort_type '%s'. sort_type must be 'create_date_asc', 'create_date_desc', 'update_date_asc', 'update_date_desc', 'title_date_asc', 'title_date_desc', 'stocked_asc' or 'stocked_desc'"
       # rubocop:enable LineLength
 
@@ -26,7 +26,7 @@ module QiitaMatome
 
       def initialize(articles, sort_type = Consts::UPDATE_DATE_DESC)
         Validators::ArticlesValidator.validate(articles)
-        validate_article(articles)
+        Validators::ArticleValidator.validate(articles)
         validate_sort_type(sort_type)
         @articles = articles
         @sort_type = sort_type
@@ -38,14 +38,6 @@ module QiitaMatome
       end
 
       private
-
-      def validate_article(articles)
-        return if articles.empty?
-        articles.each do |article|
-          next if article.is_a?(Article)
-          fail ArgumentError, format(ARTICLE_CLASS_ERROR, article.class)
-        end
-      end
 
       def validate_sort_type(sort_type)
         return if Consts::ALL_TYPES.include?(sort_type)
