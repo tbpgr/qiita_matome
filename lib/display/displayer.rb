@@ -43,6 +43,14 @@ module QiitaMatome
         "|#{disp.join('|')}|"
       end
 
+      def display_articles
+        display = []
+        @articles.each.with_index(1) do |article, no|
+          display << display_article(no, article)
+        end
+        display.join("\n") + "\n"
+      end
+
       private
 
       def table_title_header
