@@ -11,7 +11,7 @@
 - [x] Sorterの初期化処理を実装する。articlesの配列内のarticleのValidation
 - [x] Sorterの初期化処理を実装する。sort_typeのValidation
 - [x] Sorterのsort処理を実装する。Sorter#sort
-- [ ] Displayerの初期化処理を実装する。Displayer.new(articles, display_columns)
+- [x] Displayerの初期化処理を実装する。Displayer.new(articles, display_columns)
 - [ ] Displayerのタイトル出力処理を実装する。Displayer#display_title(title)
 - [ ] Displayerの1件display処理を実装する。Displayer#display_list_line(qiita_article)
 - [ ] Displayerの全件display処理を実装する。Displayer#display_list(articles)

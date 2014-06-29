@@ -10,6 +10,8 @@ module QiitaMatome
       UPDATE_DATE = :update_date
       STOCKED = :stocked
       NO = :no
+
+      COLUMNS = [:title, :create_date, :update_date, :stocked, :no]
     end
   end
 end
