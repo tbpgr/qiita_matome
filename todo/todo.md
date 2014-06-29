@@ -14,7 +14,13 @@
 - [x] Displayerの初期化処理を実装する。Displayer.new(articles, display_columns)
 - [x] Displayerのタイトル出力処理を実装する。Displayer#display_title(title)
 - [x] Displayerの1件display処理を実装する。Displayer#display_article(no, article)
+- [ ] Displayerのテーブルヘッダー出力を実装する。Displayer#table_header
 - [ ] Displayerの全件display処理を実装する。Displayer#display_articles
+- [ ] ArticlesValidatorのテストクラス作成
+- [ ] ArticleValidatorのテストクラス作成
+- [ ] SortTypeValidatorのテストクラス作成
+- [ ] DisplayColumnsValidatorのテストクラス作成
+- [ ] Articleのcreated_at_ymdhms/updated_at_ymdhmsのテストケース追加
 - [ ] FileWriterの初期化処理を実装する。FileWriter.new(output_file)
 - [ ] FileWriterの出力処理処理を実装する。FileWriter#write(markdown)。ディレクトリがない場合は作成する
 - [ ] coreの実装
