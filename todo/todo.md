@@ -15,7 +15,7 @@
 - [x] Displayerのタイトル出力処理を実装する。Displayer#display_title(title)
 - [x] Displayerの1件display処理を実装する。Displayer#display_article(no, article)
 - [x] Displayerのテーブルヘッダー出力を実装する。Displayer#table_header
-- [ ] Displayerの全件display処理を実装する。Displayer#display_articles
+- [x] Displayerの全件display処理を実装する。Displayer#display_articles
 - [ ] ArticlesValidatorのテストクラス作成
 - [ ] ArticleValidatorのテストクラス作成
 - [ ] SortTypeValidatorのテストクラス作成
