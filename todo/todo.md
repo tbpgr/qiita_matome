@@ -14,7 +14,7 @@
 - [x] Displayerの初期化処理を実装する。Displayer.new(articles, display_columns)
 - [x] Displayerのタイトル出力処理を実装する。Displayer#display_title(title)
 - [x] Displayerの1件display処理を実装する。Displayer#display_article(no, article)
-- [ ] Displayerのテーブルヘッダー出力を実装する。Displayer#table_header
+- [x] Displayerのテーブルヘッダー出力を実装する。Displayer#table_header
 - [ ] Displayerの全件display処理を実装する。Displayer#display_articles
 - [ ] ArticlesValidatorのテストクラス作成
 - [ ] ArticleValidatorのテストクラス作成

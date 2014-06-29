@@ -25,6 +25,12 @@ module QiitaMatome
         "# #{@title}"
       end
 
+      def table_header
+        title_header = table_title_header
+        title_align = table_align
+        "#{title_header}\n#{title_align}\n"
+      end
+
       def display_article(no, article)
         disp = @display_columns.reduce([]) do |a, e|
           a << case e
@@ -35,6 +41,28 @@ module QiitaMatome
           end
         end
         "|#{disp.join('|')}|"
+      end
+
+      private
+
+      def table_title_header
+        header = @display_columns.reduce([]) do |a, e|
+          a << Consts::COLUMNS_TITLE_MAP[e]
+          a
+        end
+        "|#{header.join('|')}|"
+      end
+
+      def table_align
+        align = @display_columns.reduce([]) do |a, e|
+          a << case Consts::COLUMNS_ALIGN_MAP[e]
+               when Consts::ALIGN_RIGHT then '--:'
+               when Consts::ALIGN_LEFT then ':--'
+               when Consts::ALIGN_CENTER then ':--:'
+          end
+          a
+        end
+        "|#{align.join('|')}|"
       end
     end
   end
