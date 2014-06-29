@@ -72,7 +72,7 @@ describe QiitaMatome::Sort::Sorter do
   end
 
   context :sort do
-    AITICLES = [
+    ARTICLES = [
       QiitaMatome::Article.new(
         user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
         title: 'title1',
@@ -102,7 +102,7 @@ describe QiitaMatome::Sort::Sorter do
       {
         case_no: 1,
         case_title: 'create date asc',
-        articles: AITICLES,
+        articles: ARTICLES,
         sort_type: QiitaMatome::Sort::Consts::CREATE_DATE_ASC,
         expected: [
           QiitaMatome::Article.new(
@@ -134,7 +134,7 @@ describe QiitaMatome::Sort::Sorter do
       {
         case_no: 2,
         case_title: 'create date desc',
-        articles: AITICLES,
+        articles: ARTICLES,
         sort_type: QiitaMatome::Sort::Consts::CREATE_DATE_DESC,
         expected: [
           QiitaMatome::Article.new(
@@ -166,7 +166,7 @@ describe QiitaMatome::Sort::Sorter do
       {
         case_no: 3,
         case_title: 'update date asc',
-        articles: AITICLES,
+        articles: ARTICLES,
         sort_type: QiitaMatome::Sort::Consts::UPDATE_DATE_ASC,
         expected: [
           QiitaMatome::Article.new(
@@ -198,7 +198,7 @@ describe QiitaMatome::Sort::Sorter do
       {
         case_no: 4,
         case_title: 'update date desc',
-        articles: AITICLES,
+        articles: ARTICLES,
         sort_type: QiitaMatome::Sort::Consts::UPDATE_DATE_DESC,
         expected: [
           QiitaMatome::Article.new(
@@ -230,7 +230,7 @@ describe QiitaMatome::Sort::Sorter do
       {
         case_no: 5,
         case_title: 'title asc',
-        articles: AITICLES,
+        articles: ARTICLES,
         sort_type: QiitaMatome::Sort::Consts::TITLE_ASC,
         expected: [
           QiitaMatome::Article.new(
@@ -262,7 +262,7 @@ describe QiitaMatome::Sort::Sorter do
       {
         case_no: 6,
         case_title: 'title desc',
-        articles: AITICLES,
+        articles: ARTICLES,
         sort_type: QiitaMatome::Sort::Consts::TITLE_DESC,
         expected: [
           QiitaMatome::Article.new(
@@ -294,7 +294,7 @@ describe QiitaMatome::Sort::Sorter do
       {
         case_no: 7,
         case_title: 'stock_count asc',
-        articles: AITICLES,
+        articles: ARTICLES,
         sort_type: QiitaMatome::Sort::Consts::STOCKED_ASC,
         expected: [
           QiitaMatome::Article.new(
@@ -326,7 +326,7 @@ describe QiitaMatome::Sort::Sorter do
       {
         case_no: 8,
         case_title: 'stock_count desc',
-        articles: AITICLES,
+        articles: ARTICLES,
         sort_type: QiitaMatome::Sort::Consts::STOCKED_DESC,
         expected: [
           QiitaMatome::Article.new(
