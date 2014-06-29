@@ -13,8 +13,8 @@
 - [x] Sorterのsort処理を実装する。Sorter#sort
 - [x] Displayerの初期化処理を実装する。Displayer.new(articles, display_columns)
 - [x] Displayerのタイトル出力処理を実装する。Displayer#display_title(title)
-- [ ] Displayerの1件display処理を実装する。Displayer#display_list_line(qiita_article)
-- [ ] Displayerの全件display処理を実装する。Displayer#display_list(articles)
+- [x] Displayerの1件display処理を実装する。Displayer#display_article(no, article)
+- [ ] Displayerの全件display処理を実装する。Displayer#display_articles
 - [ ] FileWriterの初期化処理を実装する。FileWriter.new(output_file)
 - [ ] FileWriterの出力処理処理を実装する。FileWriter#write(markdown)。ディレクトリがない場合は作成する
 - [ ] coreの実装

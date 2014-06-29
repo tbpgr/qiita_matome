@@ -24,6 +24,18 @@ module QiitaMatome
       def display_title
         "# #{@title}"
       end
+
+      def display_article(no, article)
+        disp = @display_columns.reduce([]) do |a, e|
+          a << case e
+               when :no then no
+               when :title then article.title
+               when :create_date then  article.created_at_ymdhms
+               when :stocked then article.stock_count
+          end
+        end
+        "|#{disp.join('|')}|"
+      end
     end
   end
 end
