@@ -126,7 +126,7 @@ describe QiitaMatome::Display::Displayer do
   end
 
   context :table_header do
-    ARTICLE = QiitaMatome::Article.new(
+    TABLE_HEADER_ARTICLE = QiitaMatome::Article.new(
       user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
       title: 'title1',
       created_at: '2014-06-18 22:37:54 +0900',
@@ -139,7 +139,7 @@ describe QiitaMatome::Display::Displayer do
       {
         case_no: 1,
         case_title: 'valid args',
-        articles: [ARTICLE, QiitaMatome::Article.new],
+        articles: [TABLE_HEADER_ARTICLE, QiitaMatome::Article.new],
         display_columns: [:no, :title],
         expected: <<-EOS
 |No.|タイトル|
@@ -149,7 +149,7 @@ describe QiitaMatome::Display::Displayer do
       {
         case_no: 2,
         case_title: 'full display args',
-        articles: [ARTICLE, QiitaMatome::Article.new],
+        articles: [TABLE_HEADER_ARTICLE, QiitaMatome::Article.new],
         display_columns: [:no, :title, :create_date, :stocked],
         expected: <<-EOS
 |No.|タイトル|作成日|ストック数|
@@ -187,7 +187,7 @@ describe QiitaMatome::Display::Displayer do
   end
 
   context :display_article do
-    ARTICLE = QiitaMatome::Article.new(
+    DISPLAY_ARTICLE = QiitaMatome::Article.new(
         user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
         title: 'title1',
         created_at: '2014-06-18 22:37:54 +0900',
@@ -200,8 +200,8 @@ describe QiitaMatome::Display::Displayer do
       {
         case_no: 1,
         case_title: 'valid args',
-        articles: [ARTICLE, QiitaMatome::Article.new],
-        article: ARTICLE,
+        articles: [DISPLAY_ARTICLE, QiitaMatome::Article.new],
+        article: DISPLAY_ARTICLE,
         no: 1,
         display_columns: [:no, :title],
         expected: '|1|title1|'
@@ -209,8 +209,8 @@ describe QiitaMatome::Display::Displayer do
       {
         case_no: 2,
         case_title: 'full display args',
-        articles: [ARTICLE, QiitaMatome::Article.new],
-        article: ARTICLE,
+        articles: [DISPLAY_ARTICLE, QiitaMatome::Article.new],
+        article: DISPLAY_ARTICLE,
         no: 1,
         display_columns: [:no, :title, :create_date, :stocked],
         expected: '|1|title1|2014/06/18 22:37:54|2|'
@@ -246,7 +246,7 @@ describe QiitaMatome::Display::Displayer do
   end
 
   context :display_articles do
-    ARTICLES = [
+    DISPLAY_ARTICLES = [
       QiitaMatome::Article.new(
         user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
         title: 'title1',
@@ -277,7 +277,7 @@ describe QiitaMatome::Display::Displayer do
       {
         case_no: 1,
         case_title: 'valid args',
-        articles: ARTICLES,
+        articles: DISPLAY_ARTICLES,
         display_columns: [:no, :title],
         expected: <<-EOS
 |1|title1|
@@ -288,7 +288,7 @@ describe QiitaMatome::Display::Displayer do
       {
         case_no: 2,
         case_title: 'full display args',
-        articles: ARTICLES,
+        articles: DISPLAY_ARTICLES,
         display_columns: [:no, :title, :create_date, :stocked],
         expected: <<-EOS
 |1|title1|2014/06/18 22:37:54|2|
