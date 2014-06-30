@@ -61,7 +61,8 @@ excludes []
     def execute
       dsl = read_dsl
       user = dsl.qiita_matome.user
-      qjl = QiitaJsonLoader.new.load(user)
+      qjl = QiitaJsonLoader.new
+      qjl.load(user)
       articles = qjl.articles
       tag = dsl.qiita_matome.tag
       filterd_articles = articles.filter_by_tag(tag)
