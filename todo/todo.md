@@ -27,8 +27,9 @@
 - [ ] binの実装
 - [ ] gemの動作確認
 - [ ] READMEの更新（gemの動作結果を反映）
+- [ ] exclude処理を実装
+- [ ] リファクタリング
 - [ ] TravisCIの導入
 - [ ] CodeClimateの導入
 - [ ] Coverallsの導入
-- [ ] リファクタリング
 - [ ] RubyGemsへ version 0.0.1 をリリース
