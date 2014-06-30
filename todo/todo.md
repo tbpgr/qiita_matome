@@ -18,7 +18,7 @@
 - [x] Displayerの全件display処理を実装する。Displayer#display_articles
 - [x] ArticlesValidatorのテストクラス作成
 - [x] ArticleValidatorのテストクラス作成
-- [ ] SortTypeValidatorのテストクラス作成
+- [x] SortTypeValidatorのテストクラス作成
 - [ ] DisplayColumnsValidatorのテストクラス作成
 - [ ] Articleのcreated_at_ymdhms/updated_at_ymdhmsのテストケース追加
 - [ ] FileWriterの初期化処理を実装する。FileWriter.new(output_file)
