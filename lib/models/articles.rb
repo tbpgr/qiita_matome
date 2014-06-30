@@ -27,7 +27,7 @@ module QiitaMatome
     end
 
     def filter_by_tag(tag)
-      @articles.select { |e|e.tag == tag }
+      @articles.select { |e|e.tags.map { |t|t['name'] }.include?(tag) }
     end
   end
 end
