@@ -30,6 +30,7 @@ module QiitaMatome
       # print  @articles
       puts "@@@@@@@@@@@@@@@@@"
       puts @articles.class
+      puts @articles.first.class
       puts "@@@@@@@@@@@@@@@@@"
       puts
       @articles.select { |e|e.tags.map { |t|t['name'] }.include?(tag) }
