@@ -185,10 +185,10 @@ describe QiitaMatome::Articles do
         case_no: 1,
         case_title: 'init 4 Ruby-tag 2 list case',
         init: [
-          QiitaMatome::Article.new(tag: 'Ruby'),
-          QiitaMatome::Article.new(tag: 'Java'),
-          QiitaMatome::Article.new(tag: 'Ruby'),
-          QiitaMatome::Article.new(tag: 'C'),
+          QiitaMatome::Article.new(tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => 'icon', 'versions' => [] }]),
+          QiitaMatome::Article.new(tags: [{ 'name' => 'Java', 'url_name' => 'java', 'icon_url' => 'icon', 'versions' => [] }]),
+          QiitaMatome::Article.new(tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => 'icon', 'versions' => [] }]),
+          QiitaMatome::Article.new(tags: [{ 'name' => 'C', 'url_name' => 'c', 'icon_url' => 'icon', 'versions' => [] }])
         ],
         filter_tag: 'Ruby',
         expected: 2
@@ -197,10 +197,10 @@ describe QiitaMatome::Articles do
         case_no: 1,
         case_title: 'init 4 Swift-tag 0 list case',
         init: [
-          QiitaMatome::Article.new(tag: 'Ruby'),
-          QiitaMatome::Article.new(tag: 'Java'),
-          QiitaMatome::Article.new(tag: 'Ruby'),
-          QiitaMatome::Article.new(tag: 'C'),
+          QiitaMatome::Article.new(tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => 'icon', 'versions' => [] }]),
+          QiitaMatome::Article.new(tags: [{ 'name' => 'Java', 'url_name' => 'java', 'icon_url' => 'icon', 'versions' => [] }]),
+          QiitaMatome::Article.new(tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => 'icon', 'versions' => [] }]),
+          QiitaMatome::Article.new(tags: [{ 'name' => 'C', 'url_name' => 'c', 'icon_url' => 'icon', 'versions' => [] }])
         ],
         filter_tag: 'Swift',
         expected: 0
@@ -213,14 +213,13 @@ describe QiitaMatome::Articles do
           case_before c
 
           # -- given --
-          qiita_matome_articles = QiitaMatome::Articles.new
+          qiita_matome_articles = QiitaMatome::Articles.new(c[:init])
 
           # -- when --
           actual = qiita_matome_articles.filter_by_tag(c[:filter_tag])
 
           # -- then --
-          # TODO: implement assertion code
-          # expect(actual).to eq(c[:expected])
+          expect(actual.size).to eq(c[:expected])
         ensure
           case_after c
         end
