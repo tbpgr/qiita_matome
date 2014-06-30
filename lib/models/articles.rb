@@ -27,7 +27,7 @@ module QiitaMatome
     end
 
     def filter_by_tag(tag)
-      select { |e|e.tag == tag }
+      @articles.select { |e|e.tag == tag }
     end
   end
 end
