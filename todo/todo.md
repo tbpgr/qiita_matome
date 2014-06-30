@@ -21,8 +21,8 @@
 - [x] SortTypeValidatorのテストクラス作成
 - [x] DisplayColumnsValidatorのテストクラス作成
 - [x] Articleのcreated_at_ymdhms/updated_at_ymdhmsのテストケース追加
-- [ ] FileWriterの初期化処理を実装する。FileWriter.new(output_file)
-- [ ] FileWriterの出力処理処理を実装する。FileWriter#write(markdown)。ディレクトリがない場合は作成する
+- [x] FileWriterの初期化処理を実装する。FileWriter.new(output_file)
+- [x] FileWriterの出力処理処理を実装する。FileWriter#write(markdown)。ディレクトリがない場合は作成する
 - [ ] coreの実装
 - [ ] binの実装
 - [ ] gemの動作確認
