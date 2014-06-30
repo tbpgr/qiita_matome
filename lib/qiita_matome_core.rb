@@ -79,6 +79,7 @@ excludes []
       src = File.open(QIITA_MATOME_FILE) { |f|f.read }
       dsl = QiitaMatome::Dsl.new
       dsl.instance_eval src
+      dsl
     end
 
     def read_markdown(articles, title, display_columns)
