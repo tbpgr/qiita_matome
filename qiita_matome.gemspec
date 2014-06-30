@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['tbpgr@tbpgr.jp']
   spec.summary       = %q(Qiita article matome generator)
   spec.description   = %q(Qiita article matome generator)
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/tbpgr/qiita_matome'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")

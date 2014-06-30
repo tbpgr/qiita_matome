@@ -1,5 +1,11 @@
 # encoding: utf-8
+require 'display/displayer'
+require 'file_writer'
+require 'models/article'
+require 'models/articles'
+require 'qiita_json_loader'
 require 'qiita_matome_dsl'
+require 'sort/sorter'
 
 module QiitaMatome
   #  QiitaMatome Core
@@ -46,23 +52,46 @@ excludes []
 
     EOS
 
-    # == generate Qiitamatomefile to current directory.
+    # Generate Qiitamatomefile to current directory.
     def init
       File.open(QIITA_MATOME_FILE, 'w') { |f|f.puts QIITA_MATOME_TEMPLATE }
     end
 
-    # == TODO: write your gem's specific contents
+    # Generate QiitaMatome markdown file.
     def execute
       dsl = read_dsl
-
-      # TODO: implement your gem's specific logic
+      user = dsl.qiita_matome.user
+      articles = QiitaJsonLoader.new.load(user)
+      tag = dsl.qiita_matome.tag
+      filterd_articles = articles.filter_by_tag(tag)
+      sort_type = dsl.qiita_matome.sort_type
+      sorter = Sort::Sorter.new(filterd_articles, sort_type)
+      sorted_articles = sorter.sort
+      markdown = read_markdown(sorted_articles, title, display_columns)
+      output_file = dsl.qiita_matome.output_file
+      fw = QiitaMatome::FileWriter.new(output_file], markdown)
+      fw.write
     end
 
     private
+
     def read_dsl
       src = File.open(QIITA_MATOME_FILE) { |f|f.read }
       dsl = QiitaMatome::Dsl.new
       dsl.instance_eval src
+    end
+
+    def read_markdown(articles, title, display_columns)
+      dd = Display::Displayer.new(title, articles, display_columns)
+      display_title = dd.display_title
+      table_header = dd.table_header
+      display_articles = dd.display_articles
+      <<-EOS
+#{display_title}
+
+#{table_header}
+#{display_articles}
+      EOS
     end
   end
 end
