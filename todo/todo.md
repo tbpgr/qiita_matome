@@ -19,7 +19,7 @@
 - [x] ArticlesValidatorのテストクラス作成
 - [x] ArticleValidatorのテストクラス作成
 - [x] SortTypeValidatorのテストクラス作成
-- [ ] DisplayColumnsValidatorのテストクラス作成
+- [x] DisplayColumnsValidatorのテストクラス作成
 - [ ] Articleのcreated_at_ymdhms/updated_at_ymdhmsのテストケース追加
 - [ ] FileWriterの初期化処理を実装する。FileWriter.new(output_file)
 - [ ] FileWriterの出力処理処理を実装する。FileWriter#write(markdown)。ディレクトリがない場合は作成する
