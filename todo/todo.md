@@ -23,7 +23,7 @@
 - [x] Articleのcreated_at_ymdhms/updated_at_ymdhmsのテストケース追加
 - [x] FileWriterの初期化処理を実装する。FileWriter.new(output_file)
 - [x] FileWriterの出力処理処理を実装する。FileWriter#write(markdown)。ディレクトリがない場合は作成する
-- [ ] coreの実装
+- [x] coreの実装
 - [ ] binの実装
 - [ ] gemの動作確認
 - [ ] READMEの更新（gemの動作結果を反映）
