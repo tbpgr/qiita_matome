@@ -11,7 +11,7 @@ module QiitaMatome
     class_option :help, type: :boolean, aliases: '-h', desc: 'help message.'
     class_option :version, type: :boolean, desc: 'version'
 
-    desc 'execute', 'TODO: write your desc'
+    desc 'execute', 'Generate QiitaMatome markdown file.'
     def execute
       QiitaMatome::Core.new.execute
     end
