@@ -17,7 +17,7 @@
 - [x] Displayerのテーブルヘッダー出力を実装する。Displayer#table_header
 - [x] Displayerの全件display処理を実装する。Displayer#display_articles
 - [x] ArticlesValidatorのテストクラス作成
-- [ ] ArticleValidatorのテストクラス作成
+- [x] ArticleValidatorのテストクラス作成
 - [ ] SortTypeValidatorのテストクラス作成
 - [ ] DisplayColumnsValidatorのテストクラス作成
 - [ ] Articleのcreated_at_ymdhms/updated_at_ymdhmsのテストケース追加
