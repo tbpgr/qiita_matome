@@ -145,7 +145,7 @@ describe QiitaMatome::Articles do
       {
         case_no: 1,
         case_title: '2 list case',
-        articles: [QiitaMatome::Article.new(user: 1), QiitaMatome::Article.new(user: 2)],
+        articles: [QiitaMatome::Article.new('user' => 1), QiitaMatome::Article.new('user' => 2)],
         expected: 3,
       }
     ]
@@ -185,10 +185,10 @@ describe QiitaMatome::Articles do
         case_no: 1,
         case_title: 'init 4 Ruby-tag 2 list case',
         init: [
-          QiitaMatome::Article.new(tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => 'icon', 'versions' => [] }]),
-          QiitaMatome::Article.new(tags: [{ 'name' => 'Java', 'url_name' => 'java', 'icon_url' => 'icon', 'versions' => [] }]),
-          QiitaMatome::Article.new(tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => 'icon', 'versions' => [] }]),
-          QiitaMatome::Article.new(tags: [{ 'name' => 'C', 'url_name' => 'c', 'icon_url' => 'icon', 'versions' => [] }])
+          QiitaMatome::Article.new('tags' => [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => 'icon', 'versions' => [] }]),
+          QiitaMatome::Article.new('tags' => [{ 'name' => 'Java', 'url_name' => 'java', 'icon_url' => 'icon', 'versions' => [] }]),
+          QiitaMatome::Article.new('tags' => [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => 'icon', 'versions' => [] }]),
+          QiitaMatome::Article.new('tags' => [{ 'name' => 'C', 'url_name' => 'c', 'icon_url' => 'icon', 'versions' => [] }])
         ],
         filter_tag: 'Ruby',
         expected: 2
@@ -197,10 +197,10 @@ describe QiitaMatome::Articles do
         case_no: 1,
         case_title: 'init 4 Swift-tag 0 list case',
         init: [
-          QiitaMatome::Article.new(tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => 'icon', 'versions' => [] }]),
-          QiitaMatome::Article.new(tags: [{ 'name' => 'Java', 'url_name' => 'java', 'icon_url' => 'icon', 'versions' => [] }]),
-          QiitaMatome::Article.new(tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => 'icon', 'versions' => [] }]),
-          QiitaMatome::Article.new(tags: [{ 'name' => 'C', 'url_name' => 'c', 'icon_url' => 'icon', 'versions' => [] }])
+          QiitaMatome::Article.new('tags' => [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => 'icon', 'versions' => [] }]),
+          QiitaMatome::Article.new('tags' => [{ 'name' => 'Java', 'url_name' => 'java', 'icon_url' => 'icon', 'versions' => [] }]),
+          QiitaMatome::Article.new('tags' => [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => 'icon', 'versions' => [] }]),
+          QiitaMatome::Article.new('tags' => [{ 'name' => 'C', 'url_name' => 'c', 'icon_url' => 'icon', 'versions' => [] }])
         ],
         filter_tag: 'Swift',
         expected: 0

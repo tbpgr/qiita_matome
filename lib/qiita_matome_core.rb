@@ -69,6 +69,8 @@ excludes []
       sort_type = dsl.qiita_matome.sort_type
       sorter = Sort::Sorter.new(filterd_articles, sort_type)
       sorted_articles = sorter.sort
+      title = dsl.qiita_matome.title
+      display_columns = dsl.qiita_matome.display_columns
       markdown = read_markdown(sorted_articles, title, display_columns)
       output_file = dsl.qiita_matome.output_file
       fw = QiitaMatome::FileWriter.new(output_file, markdown)
@@ -92,8 +94,7 @@ excludes []
       <<-EOS
 #{display_title}
 
-#{table_header}
-#{display_articles}
+#{table_header}#{display_articles}
       EOS
     end
   end

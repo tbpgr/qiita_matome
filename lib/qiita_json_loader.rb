@@ -35,7 +35,7 @@ module QiitaMatome
       json = open(format(QIITA_URL, user, page, PER_PAGE)).read
       json_articles = JSON.parser.new(json).parse
       @articles += json_articles.each_with_object(Articles.new) do |item, memo|
-        memo << Articles.new(item)
+        memo << Article.new(item)
         memo
       end
     end

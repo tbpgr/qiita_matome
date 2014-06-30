@@ -35,7 +35,7 @@ module QiitaMatome
         disp = @display_columns.reduce([]) do |a, e|
           a << case e
                when :no then no
-               when :title then article.title
+               when :title then article.title.gsub('|', '')
                when :create_date then  article.created_at_ymdhms
                when :stocked then article.stock_count
           end
