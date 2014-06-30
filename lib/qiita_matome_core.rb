@@ -69,7 +69,7 @@ excludes []
       sorted_articles = sorter.sort
       markdown = read_markdown(sorted_articles, title, display_columns)
       output_file = dsl.qiita_matome.output_file
-      fw = QiitaMatome::FileWriter.new(output_file], markdown)
+      fw = QiitaMatome::FileWriter.new(output_file, markdown)
       fw.write
     end
 
