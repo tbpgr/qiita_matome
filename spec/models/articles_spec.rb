@@ -246,7 +246,7 @@ describe QiitaMatome::Articles do
           QiitaMatome::Article.new('title' => 'title3', 'uuid' => '3'),
           QiitaMatome::Article.new('title' => 'title4', 'uuid' => '4')
         ],
-        uuids: ['2', '3'],
+        uuids: %w(2 3),
         expected: [
           QiitaMatome::Article.new('title' => 'title1', 'uuid' => '1'),
           QiitaMatome::Article.new('title' => 'title4', 'uuid' => '4')
