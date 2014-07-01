@@ -12,20 +12,20 @@ describe QiitaMatome::Sort::Sorter do
         case_no: 1,
         case_title: 'valid args',
         articles: [QiitaMatome::Article.new, QiitaMatome::Article.new],
-        sort_type: QiitaMatome::Sort::Consts::CREATE_DATE_ASC
+        sort_type: QiitaMatome::Sort::Consts::CREATED_AT_ASC
       },
       {
         case_no: 2,
         case_title: 'invalid articles class "String"',
         articles: 'String',
-        sort_type: QiitaMatome::Sort::Consts::CREATE_DATE_ASC,
+        sort_type: QiitaMatome::Sort::Consts::CREATED_AT_ASC,
         expect_error: true
       },
       {
         case_no: 3,
         case_title: 'invalid article class "String"',
         articles: [QiitaMatome::Article.new, 'String'],
-        sort_type: QiitaMatome::Sort::Consts::CREATE_DATE_ASC,
+        sort_type: QiitaMatome::Sort::Consts::CREATED_AT_ASC,
         expect_error: true
       },
       {
@@ -103,7 +103,7 @@ describe QiitaMatome::Sort::Sorter do
         case_no: 1,
         case_title: 'create date asc',
         articles: ARTICLES,
-        sort_type: QiitaMatome::Sort::Consts::CREATE_DATE_ASC,
+        sort_type: QiitaMatome::Sort::Consts::CREATED_AT_ASC,
         expected: [
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -135,7 +135,7 @@ describe QiitaMatome::Sort::Sorter do
         case_no: 2,
         case_title: 'create date desc',
         articles: ARTICLES,
-        sort_type: QiitaMatome::Sort::Consts::CREATE_DATE_DESC,
+        sort_type: QiitaMatome::Sort::Consts::CREATED_AT_DESC,
         expected: [
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -167,7 +167,7 @@ describe QiitaMatome::Sort::Sorter do
         case_no: 3,
         case_title: 'update date asc',
         articles: ARTICLES,
-        sort_type: QiitaMatome::Sort::Consts::UPDATE_DATE_ASC,
+        sort_type: QiitaMatome::Sort::Consts::UPDATED_AT_ASC,
         expected: [
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -199,7 +199,7 @@ describe QiitaMatome::Sort::Sorter do
         case_no: 4,
         case_title: 'update date desc',
         articles: ARTICLES,
-        sort_type: QiitaMatome::Sort::Consts::UPDATE_DATE_DESC,
+        sort_type: QiitaMatome::Sort::Consts::UPDATED_AT_DESC,
         expected: [
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -295,7 +295,7 @@ describe QiitaMatome::Sort::Sorter do
         case_no: 7,
         case_title: 'stock_count asc',
         articles: ARTICLES,
-        sort_type: QiitaMatome::Sort::Consts::STOCKED_ASC,
+        sort_type: QiitaMatome::Sort::Consts::STOCK_COUNT_ASC,
         expected: [
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -327,7 +327,7 @@ describe QiitaMatome::Sort::Sorter do
         case_no: 8,
         case_title: 'stock_count desc',
         articles: ARTICLES,
-        sort_type: QiitaMatome::Sort::Consts::STOCKED_DESC,
+        sort_type: QiitaMatome::Sort::Consts::STOCK_COUNT_DESC,
         expected: [
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },

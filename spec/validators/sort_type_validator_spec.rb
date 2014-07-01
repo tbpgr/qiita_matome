@@ -10,7 +10,7 @@ describe QiitaMatome::Validators::SortTypeValidator do
       {
         case_no: 1,
         case_title: 'valid args',
-        sort_type: QiitaMatome::Sort::Consts::CREATE_DATE_ASC,
+        sort_type: QiitaMatome::Sort::Consts::CREATED_AT_ASC,
         expect_error: false
       },
       {

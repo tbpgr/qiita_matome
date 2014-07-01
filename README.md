@@ -57,7 +57,7 @@ title "your value"
 # output_file's default value => "matome.md"
 output_file "matome.md"
 
-# Set your matome sort type. you can choose created_at_asc/desc, updated_at_asc/desc, title_asc/desc, stocked_asc/desc
+# Set your matome sort type. you can choose created_at_asc/desc, updated_at_asc/desc, title_asc/desc, stock_count_asc/desc
 # sort_type allow only String
 # sort_type's default value => "created_at_desc"
 sort_type "created_at_desc"
@@ -95,8 +95,8 @@ excludes []
 |updated_at_desc|更新日降順|
 |title_asc|記事タイトル昇順|
 |title_desc|記事タイトル降順|
-|stocked_asc|ストック数昇順|
-|stocked_desc|ストック数降順。つまり人気記事順|
+|stock_count_asc|ストック数昇順|
+|stock_count_desc|ストック数降順。つまり人気記事順|
 
 ### 表示項目
 
@@ -138,7 +138,7 @@ user 'tbpgr'
 tag 'rubocop'
 title 'RuboCop まとめ'
 output_file './rubocop_matome/rubocop_matome_20140607.md'
-sort_type :stocked_desc
+sort_type :stock_count_desc
 display_columns [:no, :title, :created_at, :stocked]
 ~~~
 

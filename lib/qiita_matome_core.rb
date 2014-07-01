@@ -35,10 +35,10 @@ title "your value"
 # output_file's default value => "matome.md"
 output_file "matome.md"
 
-# Set your matome sort type. you can choose create_date_asc/desc, update_date_asc/desc, title_asc/desc, stock_count_asc/desc
+# Set your matome sort type. you can choose created_at_asc/desc, updated_at_asc/desc, title_asc/desc, stock_count_asc/desc
 # sort_type allow only String
-# sort_type's default value => "create_date_desc"
-sort_type "create_date_desc"
+# sort_type's default value => "created_at_desc"
+sort_type "created_at_desc"
 
 # Set your matome display columns. you can choose :title, :created_at, :updated_at, :stock_count and :no
 # display_columns allow only Array

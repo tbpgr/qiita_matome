@@ -12,17 +12,17 @@ module QiitaMatome
       attr_reader :articles, :sort_type
 
       SORT_PATTERNS = {
-        Consts::CREATE_DATE_ASC => { send_method: :sort_asc, sort_key: :created_at },
-        Consts::CREATE_DATE_DESC => { send_method: :sort_desc, sort_key: :created_at },
-        Consts::UPDATE_DATE_ASC => { send_method: :sort_asc, sort_key: :updated_at },
-        Consts::UPDATE_DATE_DESC => { send_method: :sort_desc, sort_key: :updated_at },
+        Consts::CREATED_AT_ASC => { send_method: :sort_asc, sort_key: :created_at },
+        Consts::CREATED_AT_DESC => { send_method: :sort_desc, sort_key: :created_at },
+        Consts::UPDATED_AT_ASC => { send_method: :sort_asc, sort_key: :updated_at },
+        Consts::UPDATED_AT_DESC => { send_method: :sort_desc, sort_key: :updated_at },
         Consts::TITLE_ASC => { send_method: :sort_asc, sort_key: :title },
         Consts::TITLE_DESC => { send_method: :sort_desc, sort_key: :title },
-        Consts::STOCKED_ASC => { send_method: :sort_asc, sort_key: :stock_count },
-        Consts::STOCKED_DESC => { send_method: :sort_desc, sort_key: :stock_count }
+        Consts::STOCK_COUNT_ASC => { send_method: :sort_asc, sort_key: :stock_count },
+        Consts::STOCK_COUNT_DESC => { send_method: :sort_desc, sort_key: :stock_count }
       }
 
-      def initialize(articles, sort_type = Consts::UPDATE_DATE_DESC)
+      def initialize(articles, sort_type = Consts::UPDATED_AT_DESC)
         Validators::ArticlesValidator.validate(articles)
         Validators::ArticleValidator.validate(articles)
         Validators::SortTypeValidator.validate(sort_type)
