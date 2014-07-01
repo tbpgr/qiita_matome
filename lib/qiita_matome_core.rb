@@ -61,17 +61,9 @@ excludes []
     # Generate QiitaMatome markdown file.
     def matome
       dsl = read_dsl
-      user = dsl.qiita_matome.user
-      qjl = QiitaJsonLoader.new
-      qjl.load(user)
-      articles = qjl.articles
-      tag = dsl.qiita_matome.tag
-      filterd_articles = articles.filter_by_tag(tag)
-      uuids = dsl.qiita_matome.excludes
-      excluded_articles = Articles.exclude_uuid(filterd_articles, uuids)
-      sort_type = dsl.qiita_matome.sort_type
-      sorter = Sort::Sorter.new(excluded_articles, sort_type)
-      sorted_articles = sorter.sort
+      articles = read_articles(dsl)
+      excluded_articles = read_excluded_articles(dsl, articles)
+      sorted_articles = read_sorted_articles(dsl, excluded_articles)
       title = dsl.qiita_matome.title
       display_columns = dsl.qiita_matome.display_columns
       markdown = read_markdown(sorted_articles, title, display_columns)
@@ -87,6 +79,26 @@ excludes []
       dsl = QiitaMatome::Dsl.new
       dsl.instance_eval src
       dsl
+    end
+
+    def read_articles(dsl)
+      user = dsl.qiita_matome.user
+      qjl = QiitaJsonLoader.new
+      qjl.load(user)
+      qjl.articles
+    end
+
+    def read_excluded_articles(dsl, articles)
+      tag = dsl.qiita_matome.tag
+      filterd_articles = articles.filter_by_tag(tag)
+      uuids = dsl.qiita_matome.excludes
+      Articles.exclude_uuid(filterd_articles, uuids)
+    end
+
+    def read_sorted_articles(dsl, articles)
+      sort_type = dsl.qiita_matome.sort_type
+      sorter = Sort::Sorter.new(articles, sort_type)
+      sorter.sort
     end
 
     def read_markdown(articles, title, display_columns)
