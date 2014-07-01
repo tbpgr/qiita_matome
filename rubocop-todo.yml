@@ -5,14 +5,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 1
-EmptyLinesAroundAccessModifier:
-  Enabled: false
-
-# Offense count: 2
-Eval:
-  Enabled: false
-
 # Offense count: 76
 LineLength:
   Max: 132

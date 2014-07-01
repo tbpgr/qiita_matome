@@ -9,14 +9,14 @@ module QiitaMatome
     # String Define
     [:user, :tag, :title, :output_file, :sort_type].each do |f|
       define_method f do |value|
-        eval "@qiita_matome.#{f} = '#{value}'", binding
+        @qiita_matome.send("#{f}=", value)
       end
     end
 
     # Array/Hash/Boolean Define
     [:display_columns, :excludes].each do |f|
       define_method f do |value|
-        eval "@qiita_matome.#{f} = #{value}", binding
+        @qiita_matome.send("#{f}=", value)
       end
     end
 
