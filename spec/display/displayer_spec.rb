@@ -300,11 +300,11 @@ describe QiitaMatome::Display::Displayer do
         case_no: 2,
         case_title: 'full display args',
         articles: DISPLAY_ARTICLES,
-        display_columns: [:no, :title, :created_at, :stock_count],
+        display_columns: [:no, :title, :created_at, :updated_at, :stock_count],
         expected: <<-EOS
-|1|[title1](http://qiita.com/tbpgr/items/d1ed617093609ccedbee)|2014/06/18 22:37:54|2|
-|2|[title2](http://qiita.com/tbpgr/items/d1ed617093609ccedbef)|2014/06/18 22:37:53|3|
-|3|[title3](http://qiita.com/tbpgr/items/d1ed617093609ccedbeg)|2014/06/18 22:37:52|10|
+|1|[title1](http://qiita.com/tbpgr/items/d1ed617093609ccedbee)|2014/06/18 22:37:54|2014/06/26 02:25:11|2|
+|2|[title2](http://qiita.com/tbpgr/items/d1ed617093609ccedbef)|2014/06/18 22:37:53|2014/06/26 02:25:09|3|
+|3|[title3](http://qiita.com/tbpgr/items/d1ed617093609ccedbeg)|2014/06/18 22:37:52|2014/06/26 02:25:10|10|
         EOS
       },
     ]
