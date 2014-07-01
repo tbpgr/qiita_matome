@@ -58,7 +58,7 @@ excludes []
     end
 
     # Generate QiitaMatome markdown file.
-    def execute
+    def matome
       dsl = read_dsl
       user = dsl.qiita_matome.user
       qjl = QiitaJsonLoader.new
