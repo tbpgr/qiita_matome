@@ -7,6 +7,7 @@ module QiitaMatome
     attr_accessor :user, :title, :uuid, :created_at, :updated_at, :tags, :stock_count # rubocop:disable LineLength
 
     def initialize(options = {})
+      @uuid = options['uuid']
       @user = options['user']
       @title = options['title']
       @uuid = options['uuid']
@@ -23,6 +24,11 @@ module QiitaMatome
 
     def updated_at_ymdhms
       @updated_at.strftime(YMDHMS_DATETIME_FORMAT)
+    end
+
+    def title_link
+      url_name = user['url_name']
+      "[#{title.gsub('|', '')}](http://qiita.com/#{url_name}/items/#{uuid})"
     end
   end
 end

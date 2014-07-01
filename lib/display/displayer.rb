@@ -31,11 +31,15 @@ module QiitaMatome
         "#{title_header}\n#{title_align}\n"
       end
 
+      def matome_updated
+        "更新日: #{DateTime.now.strftime('%Y/%m/%d %H:%M:%S')}"
+      end
+
       def display_article(no, article)
         disp = @display_columns.reduce([]) do |a, e|
           a << case e
                when :no then no
-               when :title then article.title.gsub('|', '')
+               when :title then article.title_link
                when :created_at then  article.created_at_ymdhms
                when :updated_at then  article.updated_at_ymdhms
                when :stock_count then article.stock_count

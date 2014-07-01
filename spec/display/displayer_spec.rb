@@ -195,6 +195,7 @@ describe QiitaMatome::Display::Displayer do
 
   context :display_article do
     DISPLAY_ARTICLE = QiitaMatome::Article.new(
+        'uuid' => 'd1ed617093609ccedbee',
         'user' => { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
         'title' => 'title1',
         'created_at' => '2014-06-18 22:37:54 +0900',
@@ -211,7 +212,7 @@ describe QiitaMatome::Display::Displayer do
         article: DISPLAY_ARTICLE,
         no: 1,
         display_columns: [:no, :title],
-        expected: '|1|title1|'
+        expected: '|1|[title1](http://qiita.com/tbpgr/items/d1ed617093609ccedbee)|'
       },
       {
         case_no: 2,
@@ -220,7 +221,7 @@ describe QiitaMatome::Display::Displayer do
         article: DISPLAY_ARTICLE,
         no: 1,
         display_columns: [:no, :title, :created_at, :stock_count],
-        expected: '|1|title1|2014/06/18 22:37:54|2|'
+        expected: '|1|[title1](http://qiita.com/tbpgr/items/d1ed617093609ccedbee)|2014/06/18 22:37:54|2|'
       },
     ]
 
@@ -255,6 +256,7 @@ describe QiitaMatome::Display::Displayer do
   context :display_articles do
     DISPLAY_ARTICLES = [
       QiitaMatome::Article.new(
+        'uuid' => 'd1ed617093609ccedbee',
         'user' => { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
         'title' => 'title1',
         'created_at' => '2014-06-18 22:37:54 +0900',
@@ -263,6 +265,7 @@ describe QiitaMatome::Display::Displayer do
         'stock_count' => 2
       ),
       QiitaMatome::Article.new(
+        'uuid' => 'd1ed617093609ccedbef',
         'user' => { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
         'title' => 'title2',
         'created_at' => '2014-06-18 22:37:53 +0900',
@@ -271,6 +274,7 @@ describe QiitaMatome::Display::Displayer do
         'stock_count' => 3
       ),
       QiitaMatome::Article.new(
+        'uuid' => 'd1ed617093609ccedbeg',
         'user' => { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
         'title' => 'title3',
         'created_at' => '2014-06-18 22:37:52 +0900',
@@ -287,9 +291,9 @@ describe QiitaMatome::Display::Displayer do
         articles: DISPLAY_ARTICLES,
         display_columns: [:no, :title],
         expected: <<-EOS
-|1|title1|
-|2|title2|
-|3|title3|
+|1|[title1](http://qiita.com/tbpgr/items/d1ed617093609ccedbee)|
+|2|[title2](http://qiita.com/tbpgr/items/d1ed617093609ccedbef)|
+|3|[title3](http://qiita.com/tbpgr/items/d1ed617093609ccedbeg)|
         EOS
       },
       {
@@ -298,9 +302,9 @@ describe QiitaMatome::Display::Displayer do
         articles: DISPLAY_ARTICLES,
         display_columns: [:no, :title, :created_at, :stock_count],
         expected: <<-EOS
-|1|title1|2014/06/18 22:37:54|2|
-|2|title2|2014/06/18 22:37:53|3|
-|3|title3|2014/06/18 22:37:52|10|
+|1|[title1](http://qiita.com/tbpgr/items/d1ed617093609ccedbee)|2014/06/18 22:37:54|2|
+|2|[title2](http://qiita.com/tbpgr/items/d1ed617093609ccedbef)|2014/06/18 22:37:53|3|
+|3|[title3](http://qiita.com/tbpgr/items/d1ed617093609ccedbeg)|2014/06/18 22:37:52|10|
         EOS
       },
     ]

@@ -89,10 +89,13 @@ excludes []
     def read_markdown(articles, title, display_columns)
       dd = Display::Displayer.new(title, articles, display_columns)
       display_title = dd.display_title
+      matome_updated = dd.matome_updated
       table_header = dd.table_header
       display_articles = dd.display_articles
       <<-EOS
 #{display_title}
+
+#{matome_updated}
 
 #{table_header}#{display_articles}
       EOS
