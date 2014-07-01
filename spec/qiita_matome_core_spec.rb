@@ -2,8 +2,8 @@
 require 'spec_helper'
 require 'qiita_matome_core'
 
+# rubocop:disable LineLength
 describe QiitaMatome::Core do
-
   context :execute do
     cases = [
       {
@@ -43,3 +43,4 @@ describe QiitaMatome::Core do
     end
   end
 end
+# rubocop:enable LineLength

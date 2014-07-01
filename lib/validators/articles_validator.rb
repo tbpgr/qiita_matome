@@ -5,7 +5,7 @@ module QiitaMatome
   module Validators
     # ArticlesValidator
     class ArticlesValidator
-      ARTICLES_CLASS_ERROR = "invalid argument class '%s'. articles must be Array"
+      ARTICLES_CLASS_ERROR = "invalid argument class '%s'. articles must be Array" # rubocop:disable LineLength
 
       def self.validate(articles)
         return if articles.is_a?(Array)

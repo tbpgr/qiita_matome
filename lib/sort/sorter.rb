@@ -11,6 +11,7 @@ module QiitaMatome
     class Sorter
       attr_reader :articles, :sort_type
 
+      # rubocop:disable LineLength
       SORT_PATTERNS = {
         Consts::CREATED_AT_ASC => { send_method: :sort_asc, sort_key: :created_at },
         Consts::CREATED_AT_DESC => { send_method: :sort_desc, sort_key: :created_at },
@@ -21,6 +22,7 @@ module QiitaMatome
         Consts::STOCK_COUNT_ASC => { send_method: :sort_asc, sort_key: :stock_count },
         Consts::STOCK_COUNT_DESC => { send_method: :sort_desc, sort_key: :stock_count }
       }
+      # rubocop:enable LineLength
 
       def initialize(articles, sort_type = Consts::UPDATED_AT_DESC)
         Validators::ArticlesValidator.validate(articles)

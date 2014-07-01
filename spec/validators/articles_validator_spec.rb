@@ -4,6 +4,7 @@ require 'models/article'
 require 'models/articles'
 require 'validators/articles_validator'
 
+# rubocop:disable LineLength
 describe QiitaMatome::Validators::ArticlesValidator do
   context :validate do
     cases = [
@@ -50,3 +51,4 @@ describe QiitaMatome::Validators::ArticlesValidator do
     end
   end
 end
+# rubocop:enable LineLength

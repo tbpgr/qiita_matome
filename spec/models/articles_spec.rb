@@ -3,6 +3,7 @@ require 'spec_helper'
 require 'models/articles'
 require 'models/article'
 
+# rubocop:disable LineLength
 describe QiitaMatome::Articles do
   context :<< do
     cases = [
@@ -301,3 +302,4 @@ describe QiitaMatome::Articles do
     end
   end
 end
+# rubocop:enable LineLength

@@ -2,6 +2,7 @@
 require 'spec_helper'
 require 'models/article'
 
+# rubocop:disable LineLength
 describe QiitaMatome::Article do
   context :created_at_ymdhms do
     cases = [
@@ -127,3 +128,4 @@ describe QiitaMatome::Article do
     end
   end
 end
+# rubocop:enable LineLength

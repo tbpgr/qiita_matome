@@ -5,7 +5,7 @@ module QiitaMatome
   module Validators
     # ArticleValidator
     class ArticleValidator
-      ARTICLE_CLASS_ERROR = "invalid argument class '%s'. article must be Array"
+      ARTICLE_CLASS_ERROR = "invalid argument class '%s'.article must be Array"
 
       def self.validate(articles)
         return if articles.empty?

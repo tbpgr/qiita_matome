@@ -18,7 +18,8 @@ module QiitaMatome
           end
           display_column_sym = display_column.to_sym
           unless Display::Consts::COLUMNS.include?(display_column_sym)
-            fail ArgumentError, format(DISPLAY_COLUMNS_ERROR, display_column_sym)
+            msg =  format(DISPLAY_COLUMNS_ERROR, display_column_sym)
+            fail ArgumentError, msg
           end
         end
       end

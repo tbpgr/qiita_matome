@@ -11,6 +11,8 @@ module QiitaMatome
   #  QiitaMatome Core
   class Core
     QIITA_MATOME_FILE = 'Qiitamatomefile'
+
+    # rubocop:disable LineLength
     QIITA_MATOME_TEMPLATE = <<-EOS
 # encoding: utf-8
 
@@ -50,8 +52,8 @@ display_columns [:no, :title, :created_at, :stock_count]
 # String is uuid. For example, 'edbfecb6a6789dd54f47'
 # excludes's default value => []
 excludes []
-
     EOS
+    # rubocop:enable LineLength
 
     # Generate Qiitamatomefile to current directory.
     def init

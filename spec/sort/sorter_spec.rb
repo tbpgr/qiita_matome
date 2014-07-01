@@ -5,6 +5,7 @@ require 'sort/sorter'
 require 'models/article'
 require 'models/articles'
 
+# rubocop:disable LineLength
 describe QiitaMatome::Sort::Sorter do
   context :new do
     cases = [
@@ -388,3 +389,4 @@ describe QiitaMatome::Sort::Sorter do
     end
   end
 end
+# rubocop:enable LineLength

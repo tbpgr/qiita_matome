@@ -5,6 +5,7 @@ require 'display/displayer'
 require 'models/article'
 require 'models/articles'
 
+# rubocop:disable LineLength
 describe QiitaMatome::Display::Displayer do
   context :new do
     cases = [
@@ -337,3 +338,4 @@ describe QiitaMatome::Display::Displayer do
     end
   end
 end
+# rubocop:enable LineLength
