@@ -234,4 +234,70 @@ describe QiitaMatome::Articles do
       end
     end
   end
+
+  context :exclude_uuid do
+    cases = [
+      {
+        case_no: 1,
+        case_title: 'exclude uuid case',
+        init: [
+          QiitaMatome::Article.new('title' => 'title1', 'uuid' => '1'),
+          QiitaMatome::Article.new('title' => 'title2', 'uuid' => '2'),
+          QiitaMatome::Article.new('title' => 'title3', 'uuid' => '3'),
+          QiitaMatome::Article.new('title' => 'title4', 'uuid' => '4')
+        ],
+        uuids: ['2', '3'],
+        expected: [
+          QiitaMatome::Article.new('title' => 'title1', 'uuid' => '1'),
+          QiitaMatome::Article.new('title' => 'title4', 'uuid' => '4')
+        ]
+      },
+      {
+        case_no: 2,
+        case_title: 'exclude uuid case(no target)',
+        init: [
+          QiitaMatome::Article.new('title' => 'title1', 'uuid' => '1'),
+          QiitaMatome::Article.new('title' => 'title2', 'uuid' => '2'),
+          QiitaMatome::Article.new('title' => 'title3', 'uuid' => '3'),
+          QiitaMatome::Article.new('title' => 'title4', 'uuid' => '4')
+        ],
+        uuids: ['5'],
+        expected: [
+          QiitaMatome::Article.new('title' => 'title1', 'uuid' => '1'),
+          QiitaMatome::Article.new('title' => 'title2', 'uuid' => '2'),
+          QiitaMatome::Article.new('title' => 'title3', 'uuid' => '3'),
+          QiitaMatome::Article.new('title' => 'title4', 'uuid' => '4')
+        ]
+      },
+    ]
+
+    cases.each do |c|
+      it "|case_no=#{c[:case_no]}|case_title=#{c[:case_title]}" do
+        begin
+          case_before c
+
+          # -- given --
+          # nothing
+
+          # -- when --
+          actual = QiitaMatome::Articles.exclude_uuid(c[:init], c[:uuids])
+
+          # -- then --
+          actual.each_with_index do |e, i|
+            expect(e.title).to eq(c[:expected][i].title)
+          end
+        ensure
+          case_after c
+        end
+      end
+
+      def case_before(_c)
+        # implement each case before
+      end
+
+      def case_after(_c)
+        # implement each case after
+      end
+    end
+  end
 end

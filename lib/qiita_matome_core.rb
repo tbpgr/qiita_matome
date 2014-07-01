@@ -46,7 +46,8 @@ sort_type "created_at_desc"
 display_columns [:no, :title, :created_at, :stock_count]
 
 # Set your matome exclude files
-# excludes allow only Array
+# excludes allow only Array[String, String ...]
+# String is uuid. For example, 'edbfecb6a6789dd54f47'
 # excludes's default value => []
 excludes []
 
@@ -66,8 +67,10 @@ excludes []
       articles = qjl.articles
       tag = dsl.qiita_matome.tag
       filterd_articles = articles.filter_by_tag(tag)
+      uuids = dsl.qiita_matome.excludes
+      excluded_articles = Articles.exclude_uuid(filterd_articles, uuids)
       sort_type = dsl.qiita_matome.sort_type
-      sorter = Sort::Sorter.new(filterd_articles, sort_type)
+      sorter = Sort::Sorter.new(excluded_articles, sort_type)
       sorted_articles = sorter.sort
       title = dsl.qiita_matome.title
       display_columns = dsl.qiita_matome.display_columns

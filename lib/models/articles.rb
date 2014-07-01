@@ -6,6 +6,11 @@ module QiitaMatome
     include Enumerable
     attr_accessor :articles
 
+    def self.exclude_uuid(target_articles, uuids)
+      target_articles.delete_if { |e|uuids.include?(e.uuid) }
+      target_articles
+    end
+
     def initialize(articles = [])
       @articles = articles
     end
