@@ -4,6 +4,7 @@ require 'display/display_consts'
 module QiitaMatome
   #  QiitaMatome::Validators
   module Validators
+    # DisplayColumnsValidator
     class DisplayColumnsValidator
       # rubocop:disable LineLength
       DISPLAY_COLUMNS_TO_SYM_ERROR = "Invalid display_columns. Display_columns's class must be implement 'to_sym' method."

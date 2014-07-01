@@ -2,6 +2,7 @@
 require 'qiita_matome_dsl_model'
 
 module QiitaMatome
+  # Dsl
   class Dsl
     attr_accessor :qiita_matome
 

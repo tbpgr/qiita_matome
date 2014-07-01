@@ -2,6 +2,7 @@
 require 'active_model'
 
 module QiitaMatome
+  # DslModel
   class DslModel
     include ActiveModel::Model
 
