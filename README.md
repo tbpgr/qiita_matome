@@ -57,15 +57,15 @@ title "your value"
 # output_file's default value => "matome.md"
 output_file "matome.md"
 
-# Set your matome sort type. you can choose create_date_asc/desc, update_date_asc/desc, title_asc/desc, stocked_asc/desc
+# Set your matome sort type. you can choose created_at_asc/desc, updated_at_asc/desc, title_asc/desc, stocked_asc/desc
 # sort_type allow only String
-# sort_type's default value => "create_date_desc"
-sort_type "create_date_desc"
+# sort_type's default value => "created_at_desc"
+sort_type "created_at_desc"
 
-# Set your matome display columns. you can choose :title, :create_date, :update_date, :stocked and :no
+# Set your matome display columns. you can choose :title, :created_at, :updated_at, :stocked and :no
 # display_columns allow only Array
-# display_columns's default value => [:no, :title, :create_date, :stocked]
-display_columns [:no, :title, :create_date, :stocked]
+# display_columns's default value => [:no, :title, :created_at, :stocked]
+display_columns [:no, :title, :created_at, :stocked]
 
 # Set your matome exclude files
 # excludes allow only Array
@@ -81,18 +81,18 @@ excludes []
 |tag|○|なし|対象タグ|
 |title|○|なし|まとめ記事タイトル|
 |output_file|×|matome.md|出力パス|
-|sort_type|×|create_date_desc|まとめ記事内のソート順。詳しくはソート種別参照|
-|display_columns|×|[:no, :title, :create_date, :stocked]|まとめ記事の表示項目指定。指定順に並ぶ。詳しくは表示項目参照|
+|sort_type|×|created_at_desc|まとめ記事内のソート順。詳しくはソート種別参照|
+|display_columns|×|[:no, :title, :created_at, :stocked]|まとめ記事の表示項目指定。指定順に並ぶ。詳しくは表示項目参照|
 |exclude|×|[id1, id2...]|除外記事IDを配列で指定。例えば、まとめ記事自信を除外するために指定|
 
 ### ソート種別
 
 |種別|内容|
 |:--|:--|
-|create_date_asc|初回投稿日昇順|
-|create_date_desc|初回投稿日降順|
-|update_date_asc|更新日昇順|
-|update_date_desc|更新日降順|
+|created_at_asc|初回投稿日昇順|
+|created_at_desc|初回投稿日降順|
+|updated_at_asc|更新日昇順|
+|updated_at_desc|更新日降順|
 |title_asc|記事タイトル昇順|
 |title_desc|記事タイトル降順|
 |stocked_asc|ストック数昇順|
@@ -103,8 +103,8 @@ excludes []
 |項目名|内容|
 |:--|:--|
 |:title|記事タイトル。該当記事へのリンクになる|
-|:create_date|初回投稿日|
-|:update_date|更新日|
+|:created_at|初回投稿日|
+|:updated_at|更新日|
 |:stocked|ストック数|
 |:no|連番|
 
@@ -139,7 +139,7 @@ tag 'rubocop'
 title 'RuboCop まとめ'
 output_file './rubocop_matome/rubocop_matome_20140607.md'
 sort_type :stocked_desc
-display_columns [:no, :title, :create_date, :stocked]
+display_columns [:no, :title, :created_at, :stocked]
 ~~~
 
 * まとめ記事作成を実行

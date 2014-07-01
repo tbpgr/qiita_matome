@@ -50,6 +50,13 @@ describe QiitaMatome::Display::Displayer do
         display_columns: 1,
         expect_error: true
       },
+      {
+        case_no: 7,
+        case_title: 'valid args(updated_at)',
+        articles: [QiitaMatome::Article.new, QiitaMatome::Article.new],
+        display_columns: [:created_at, :updated_at],
+        expected_display_columns: [:created_at, :updated_at]
+      },
     ]
 
     cases.each do |c|
@@ -150,7 +157,7 @@ describe QiitaMatome::Display::Displayer do
         case_no: 2,
         case_title: 'full display args',
         articles: [TABLE_HEADER_ARTICLE, QiitaMatome::Article.new],
-        display_columns: [:no, :title, :create_date, :stocked],
+        display_columns: [:no, :title, :created_at, :stocked],
         expected: <<-EOS
 |No.|タイトル|作成日|ストック数|
 |--:|:--|:--:|--:|
@@ -212,7 +219,7 @@ describe QiitaMatome::Display::Displayer do
         articles: [DISPLAY_ARTICLE, QiitaMatome::Article.new],
         article: DISPLAY_ARTICLE,
         no: 1,
-        display_columns: [:no, :title, :create_date, :stocked],
+        display_columns: [:no, :title, :created_at, :stocked],
         expected: '|1|title1|2014/06/18 22:37:54|2|'
       },
     ]
@@ -289,7 +296,7 @@ describe QiitaMatome::Display::Displayer do
         case_no: 2,
         case_title: 'full display args',
         articles: DISPLAY_ARTICLES,
-        display_columns: [:no, :title, :create_date, :stocked],
+        display_columns: [:no, :title, :created_at, :stocked],
         expected: <<-EOS
 |1|title1|2014/06/18 22:37:54|2|
 |2|title2|2014/06/18 22:37:53|3|
