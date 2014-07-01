@@ -10,7 +10,7 @@ module QiitaMatome
     class Displayer
       attr_reader :title, :articles, :display_columns
 
-      def initialize(title, articles, display_columns = [:no, :title, :created_at, :updated_at, :stocked])
+      def initialize(title, articles, display_columns = [:no, :title, :created_at, :updated_at, :stock_count])
         Validators::ArticlesValidator.validate(articles)
         Validators::ArticleValidator.validate(articles)
         display_columns_list = Array(display_columns)
@@ -38,7 +38,7 @@ module QiitaMatome
                when :title then article.title.gsub('|', '')
                when :created_at then  article.created_at_ymdhms
                when :updated_at then  article.updated_at_ymdhms
-               when :stocked then article.stock_count
+               when :stock_count then article.stock_count
           end
         end
         "|#{disp.join('|')}|"

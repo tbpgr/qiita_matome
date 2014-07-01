@@ -8,7 +8,7 @@ module QiitaMatome
       TITLE = :title.freeze
       CREATED_AT = :created_at.freeze
       UPDATED_AT = :updated_at.freeze
-      STOCKED = :stocked.freeze
+      STOCKED = :stock_count.freeze
       NO = :no.freeze
 
       ALIGN_RIGHT = :right

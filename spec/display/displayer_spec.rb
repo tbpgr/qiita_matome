@@ -157,7 +157,7 @@ describe QiitaMatome::Display::Displayer do
         case_no: 2,
         case_title: 'full display args',
         articles: [TABLE_HEADER_ARTICLE, QiitaMatome::Article.new],
-        display_columns: [:no, :title, :created_at, :stocked],
+        display_columns: [:no, :title, :created_at, :stock_count],
         expected: <<-EOS
 |No.|タイトル|作成日|ストック数|
 |--:|:--|:--:|--:|
@@ -219,7 +219,7 @@ describe QiitaMatome::Display::Displayer do
         articles: [DISPLAY_ARTICLE, QiitaMatome::Article.new],
         article: DISPLAY_ARTICLE,
         no: 1,
-        display_columns: [:no, :title, :created_at, :stocked],
+        display_columns: [:no, :title, :created_at, :stock_count],
         expected: '|1|title1|2014/06/18 22:37:54|2|'
       },
     ]
@@ -296,7 +296,7 @@ describe QiitaMatome::Display::Displayer do
         case_no: 2,
         case_title: 'full display args',
         articles: DISPLAY_ARTICLES,
-        display_columns: [:no, :title, :created_at, :stocked],
+        display_columns: [:no, :title, :created_at, :stock_count],
         expected: <<-EOS
 |1|title1|2014/06/18 22:37:54|2|
 |2|title2|2014/06/18 22:37:53|3|
