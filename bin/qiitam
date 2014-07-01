@@ -14,6 +14,9 @@ module QiitaMatome
     desc 'matome', 'Generate QiitaMatome markdown file.'
     def matome
       QiitaMatome::Core.new.matome
+    rescue => e
+      warn(e.message)
+      exit(false)
     end
 
     desc 'init', 'generate Qiitamatomefile'
