@@ -7,7 +7,8 @@ module QiitaMatome
     attr_accessor :articles
 
     def self.exclude_uuid(target_articles, uuids)
-      target_articles.delete_if { |e|uuids.include?(e.uuid) }
+      uuids_list = Array(uuids)
+      target_articles.delete_if { |e|uuids_list.include?(e.uuid) }
       target_articles
     end
 

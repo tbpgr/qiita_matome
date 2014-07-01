@@ -13,9 +13,22 @@ Qiitaの特定ユーザー、特定タグのリンクを一覧化したまとめ
 
     ※基本的には自分のユーザーのまとめを作ることを想定しています
 
+## 確認済み環境
+* ruby 2.0.0p451 環境にて動作確認済み
+
+## サブコマンド
+
+|コマンド|ショートカット|内容|
+|:--|:--|:--|
+|init|i|設定ファイル（ *Qiitamatome* ）を出力|
+|matome|m|まとめ記事の生成。実行するためには事前に *Qiitamatome* を生成、編集する必要がある|
+|help|h|ヘルプの表示|
+|version|v|バージョンの表示|
+
 ## 設定ファイルについて
 
 RubyのDSLで作成されています。  
+
 ファイル名は *Qiitamatome*  
 
 ~~~ruby
@@ -30,6 +43,9 @@ qiitam i
 
 でテンプレートを生成できます。  
 Gemfileのような感覚でご利用ください。  
+
+Rubyの内部DSLになっているので、Rubyのコードを利用することも可能です。  
+例えば、出力ファイルの名前に現在時刻を埋め込んだり、など。  
 
 ### 設定ファイル自動生成時の内容
 
@@ -62,10 +78,10 @@ output_file "matome.md"
 # sort_type's default value => "created_at_desc"
 sort_type "created_at_desc"
 
-# Set your matome display columns. you can choose :title, :created_at, :updated_at, :stocked and :no
+# Set your matome display columns. you can choose :title, :created_at, :updated_at, :stock_count and :no
 # display_columns allow only Array
-# display_columns's default value => [:no, :title, :created_at, :stocked]
-display_columns [:no, :title, :created_at, :stocked]
+# display_columns's default value => [:no, :title, :created_at, :stock_count]
+display_columns [:no, :title, :created_at, :stock_count]
 
 # Set your matome exclude files
 # excludes allow only Array
@@ -80,10 +96,10 @@ excludes []
 |user|○|なし|対象ユーザー|
 |tag|○|なし|対象タグ|
 |title|○|なし|まとめ記事タイトル|
-|output_file|×|matome.md|出力パス|
+|output_file|○|matome.md|出力パス|
 |sort_type|×|created_at_desc|まとめ記事内のソート順。詳しくはソート種別参照|
-|display_columns|×|[:no, :title, :created_at, :stocked]|まとめ記事の表示項目指定。指定順に並ぶ。詳しくは表示項目参照|
-|exclude|×|[id1, id2...]|除外記事IDを配列で指定。例えば、まとめ記事自信を除外するために指定|
+|display_columns|×|[:no, :title, :created_at, :stock_count]|まとめ記事の表示項目指定。指定順に並ぶ。詳しくは表示項目参照|
+|exclude|×|[id1, id2...]|除外記事ID（uuid）を配列で指定。例えば、まとめ記事自信を除外するために指定|
 
 ### ソート種別
 
@@ -103,9 +119,9 @@ excludes []
 |項目名|内容|
 |:--|:--|
 |:title|記事タイトル。該当記事へのリンクになる|
-|:created_at|初回投稿日|
-|:updated_at|更新日|
-|:stocked|ストック数|
+|:created_at|初回投稿日 「YYYY/MM/DD hh:mi:ss」 フォーマット|
+|:updated_at|更新日 「YYYY/MM/DD hh:mi:ss」 フォーマット|
+|:stock_count|ストック数|
 |:no|連番|
 
 ## インストール
@@ -123,9 +139,15 @@ Or install it yourself as:
     $ gem install qiita_matome
 
 
-## 使用手順
+## 使用手順の例
 
 * 設定ファイル( *Qiitamatome* )の生成
+
+~~~bash
+$ qiitam init
+~~~
+
+または
 
 ~~~bash
 $ qiitam i
@@ -133,34 +155,44 @@ $ qiitam i
 
 * 設定ファイル( *Qiitamatome* )を編集
 
+ユーザー *tbpgr* の *rubocop* タグの記事をまとめ記事として出力します。  
+
 ~~~bash
-user 'tbpgr'
-tag 'rubocop'
-title 'RuboCop まとめ'
-output_file './rubocop_matome/rubocop_matome_20140607.md'
-sort_type :stock_count_desc
-display_columns [:no, :title, :created_at, :stocked]
+user            "tbpgr"
+tag             "rubocop"
+title           "RuboCop まとめ タイトル昇順"
+output_file     "./matome_title_asc.md"
+sort_type       "title_asc"
+display_columns [:no, :title, :created_at, :stock_count]
+# まとめ記事を除外
+excludes        ['edbfecb6a6789dd54f47']
 ~~~
 
 * まとめ記事作成を実行
 
 ~~~bash
-$ qiitam g
+$ qiitam matome
+~~~
+
+または
+
+~~~bash
+$ qiitam m
 ~~~
 
 * 結果を確認
 
 ~~~bash
-$ cat ./rubocop_matome/rubocop_matome_20140626_235567.md'
+$ cat ./matome_title_asc.md'
 # 内容が表示される
 ~~~
 
 ## 出力サンプル
 
-※実装完了時に挿入※
+[matome_title_asc.md](./samples/matome_title_asc.md)
 
 ## History
-* version 0.0.1 : develop now
+* version 0.0.1 : yyyy/mm/dd : develop now
 
 ## Contributing
 
@@ -170,3 +202,6 @@ $ cat ./rubocop_matome/rubocop_matome_20140626_235567.md'
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
+## 補足
+* この gem は [dslable gem](https://github.com/tbpgr/dslable) を利用して作成しています
+* この gem のテストクラスは [rspec_piccolo gem](https://github.com/tbpgr/rspec_piccolo) を利用してひな形を生成しています

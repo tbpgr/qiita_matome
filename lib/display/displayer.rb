@@ -10,7 +10,7 @@ module QiitaMatome
     class Displayer
       attr_reader :title, :articles, :display_columns
 
-      def initialize(title, articles, display_columns = [:no, :title, :created_at, :updated_at, :stock_count])
+      def initialize(title, articles, display_columns = [:no, :title, :created_at, :stock_count])
         Validators::ArticlesValidator.validate(articles)
         Validators::ArticleValidator.validate(articles)
         display_columns_list = Array(display_columns)

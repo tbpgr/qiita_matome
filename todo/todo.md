@@ -27,9 +27,9 @@
 - [x] binの実装
 - [x] bin, core の execute を matome に変更
 - [x] displayに更新日を追加
-- [ ] exclude処理を実装
-- [ ] gemの動作確認
-- [ ] READMEの更新（gemの動作結果を反映）
+- [x] exclude処理を実装
+- [x] gemの動作確認
+- [x] READMEの更新（gemの動作結果を反映）
 - [ ] リファクタリング
 - [ ] TravisCIの導入
 - [ ] CodeClimateの導入
