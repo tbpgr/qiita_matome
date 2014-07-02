@@ -37,13 +37,13 @@ module QiitaMatome
       end
 
       def display_article(no, article)
-        disp = @display_columns.reduce([]) do |a, e|
-          a << case e
-               when :no then no
-               when :title then article.title_link
-               when :created_at then  article.created_at_ymdhms
-               when :updated_at then  article.updated_at_ymdhms
-               when :stock_count then article.stock_count
+        disp = @display_columns.each_with_object([]) do |item, memo|
+          memo << case item
+                  when :no then no
+                  when :title then article.title_link
+                  when :created_at then  article.created_at_ymdhms
+                  when :updated_at then  article.updated_at_ymdhms
+                  when :stock_count then article.stock_count
           end
         end
         "|#{disp.join('|')}|"
@@ -60,21 +60,19 @@ module QiitaMatome
       private
 
       def table_title_header
-        header = @display_columns.reduce([]) do |a, e|
-          a << Consts::COLUMNS_TITLE_MAP[e]
-          a
+        header = @display_columns.each_with_object([]) do |item, memo|
+          memo << Consts::COLUMNS_TITLE_MAP[item]
         end
         "|#{header.join('|')}|"
       end
 
       def table_align
-        align = @display_columns.reduce([]) do |a, e|
-          a << case Consts::COLUMNS_ALIGN_MAP[e]
-               when Consts::ALIGN_RIGHT then '--:'
-               when Consts::ALIGN_LEFT then ':--'
-               when Consts::ALIGN_CENTER then ':--:'
+        align = @display_columns.each_with_object([]) do |item, memo|
+          memo << case Consts::COLUMNS_ALIGN_MAP[item]
+                  when Consts::ALIGN_RIGHT then '--:'
+                  when Consts::ALIGN_LEFT then ':--'
+                  when Consts::ALIGN_CENTER then ':--:'
           end
-          a
         end
         "|#{align.join('|')}|"
       end

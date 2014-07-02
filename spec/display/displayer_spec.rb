@@ -5,7 +5,7 @@ require 'display/displayer'
 require 'models/article'
 require 'models/articles'
 
-# rubocop:disable LineLength
+# rubocop:disable LineLength, UnusedMethodArgument
 describe QiitaMatome::Display::Displayer do
   context :new do
     cases = [
@@ -57,7 +57,7 @@ describe QiitaMatome::Display::Displayer do
         articles: [QiitaMatome::Article.new, QiitaMatome::Article.new],
         display_columns: [:created_at, :updated_at],
         expected_display_columns: [:created_at, :updated_at]
-      },
+      }
     ]
 
     cases.each do |c|
@@ -223,7 +223,7 @@ describe QiitaMatome::Display::Displayer do
         no: 1,
         display_columns: [:no, :title, :created_at, :stock_count],
         expected: '|1|[title1](http://qiita.com/tbpgr/items/d1ed617093609ccedbee)|2014/06/18 22:37:54|2|'
-      },
+      }
     ]
 
     cases.each do |c|
@@ -307,7 +307,7 @@ describe QiitaMatome::Display::Displayer do
 |2|[title2](http://qiita.com/tbpgr/items/d1ed617093609ccedbef)|2014/06/18 22:37:53|2014/06/26 02:25:09|3|
 |3|[title3](http://qiita.com/tbpgr/items/d1ed617093609ccedbeg)|2014/06/18 22:37:52|2014/06/26 02:25:10|10|
         EOS
-      },
+      }
     ]
 
     cases.each do |c|
@@ -338,4 +338,4 @@ describe QiitaMatome::Display::Displayer do
     end
   end
 end
-# rubocop:enable LineLength
+# rubocop:enable LineLength, UnusedMethodArgument

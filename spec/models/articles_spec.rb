@@ -3,7 +3,7 @@ require 'spec_helper'
 require 'models/articles'
 require 'models/article'
 
-# rubocop:disable LineLength
+# rubocop:disable LineLength, UnusedMethodArgument
 describe QiitaMatome::Articles do
   context :<< do
     cases = [
@@ -103,13 +103,13 @@ describe QiitaMatome::Articles do
         case_no: 1,
         case_title: '2 list case',
         articles: [QiitaMatome::Article.new, QiitaMatome::Article.new],
-        expected: 2,
+        expected: 2
       },
       {
         case_no: 2,
         case_title: 'empty list case',
         articles: [],
-        expected: 0,
+        expected: 0
       }
     ]
 
@@ -147,7 +147,7 @@ describe QiitaMatome::Articles do
         case_no: 1,
         case_title: '2 list case',
         articles: [QiitaMatome::Article.new('user' => 1), QiitaMatome::Article.new('user' => 2)],
-        expected: 3,
+        expected: 3
       }
     ]
 
@@ -269,7 +269,7 @@ describe QiitaMatome::Articles do
           QiitaMatome::Article.new('title' => 'title3', 'uuid' => '3'),
           QiitaMatome::Article.new('title' => 'title4', 'uuid' => '4')
         ]
-      },
+      }
     ]
 
     cases.each do |c|
@@ -302,4 +302,4 @@ describe QiitaMatome::Articles do
     end
   end
 end
-# rubocop:enable LineLength
+# rubocop:enable LineLength, UnusedMethodArgument

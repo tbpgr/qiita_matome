@@ -183,7 +183,7 @@ $ qiitam m
 * 結果を確認
 
 ~~~bash
-$ cat ./matome_title_asc.md'
+$ cat ./matome_title_asc.md
 # 内容が表示される
 ~~~
 

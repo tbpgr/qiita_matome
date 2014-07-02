@@ -4,7 +4,7 @@ require 'models/article'
 require 'sort/sort_consts'
 require 'validators/sort_type_validator'
 
-# rubocop:disable LineLength
+# rubocop:disable LineLength, UnusedMethodArgument
 describe QiitaMatome::Validators::SortTypeValidator do
   context :validate do
     cases = [
@@ -51,4 +51,4 @@ describe QiitaMatome::Validators::SortTypeValidator do
     end
   end
 end
-# rubocop:enable LineLength
+# rubocop:enable LineLength, UnusedMethodArgument

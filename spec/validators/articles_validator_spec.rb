@@ -4,7 +4,7 @@ require 'models/article'
 require 'models/articles'
 require 'validators/articles_validator'
 
-# rubocop:disable LineLength
+# rubocop:disable LineLength, UnusedMethodArgument
 describe QiitaMatome::Validators::ArticlesValidator do
   context :validate do
     cases = [
@@ -19,7 +19,7 @@ describe QiitaMatome::Validators::ArticlesValidator do
         case_title: 'invalid articles class "String"',
         articles: 'String',
         expect_error: true
-      },
+      }
     ]
 
     cases.each do |c|
@@ -51,4 +51,4 @@ describe QiitaMatome::Validators::ArticlesValidator do
     end
   end
 end
-# rubocop:enable LineLength
+# rubocop:enable LineLength, UnusedMethodArgument

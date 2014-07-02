@@ -2,15 +2,15 @@
 require 'spec_helper'
 require 'qiita_matome_core'
 
-# rubocop:disable LineLength
+# rubocop:disable LineLength, UnusedMethodArgument, UselessAssignment
 describe QiitaMatome::Core do
   context :execute do
     cases = [
       {
         case_no: 1,
         case_title: 'case_title',
-        expected: 'expected',
-      },
+        expected: 'expected'
+      }
     ]
 
     cases.each do |c|
@@ -43,4 +43,4 @@ describe QiitaMatome::Core do
     end
   end
 end
-# rubocop:enable LineLength
+# rubocop:enable LineLength, UnusedMethodArgument, UselessAssignment

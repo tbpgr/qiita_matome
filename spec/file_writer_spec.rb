@@ -3,7 +3,7 @@ require 'spec_helper'
 require 'file_writer'
 require 'fileutils'
 
-# rubocop:disable LineLength
+# rubocop:disable LineLength, UnusedMethodArgument
 describe QiitaMatome::FileWriter do
   context :new do
     cases = [
@@ -89,4 +89,4 @@ describe QiitaMatome::FileWriter do
     end
   end
 end
-# rubocop:enable LineLength
+# rubocop:enable LineLength, UnusedMethodArgument

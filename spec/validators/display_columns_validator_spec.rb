@@ -5,7 +5,7 @@ require 'display/display_consts'
 require 'display/displayer'
 require 'validators/display_columns_validator'
 
-# rubocop:disable LineLength
+# rubocop:disable LineLength, UnusedMethodArgument
 describe QiitaMatome::Validators::DisplayColumnsValidator do
   context :validate do
     cases = [
@@ -22,7 +22,7 @@ describe QiitaMatome::Validators::DisplayColumnsValidator do
         articles: [QiitaMatome::Article.new, QiitaMatome::Article.new],
         display_columns: 'invalid',
         expect_error: true
-      },
+      }
     ]
 
     cases.each do |c|
@@ -55,4 +55,4 @@ describe QiitaMatome::Validators::DisplayColumnsValidator do
     end
   end
 end
-# rubocop:enable LineLength
+# rubocop:enable LineLength, UnusedMethodArgument
