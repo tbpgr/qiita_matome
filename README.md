@@ -195,7 +195,7 @@ $ cat ./matome_title_asc.md
 [matome_title_asc.md](./samples/matome_title_asc.md)
 
 ## History
-* version 0.0.1 : yyyy/mm/dd : develop now
+* version 0.0.1 : 2014/07/03 : first release
 
 ## Contributing
 
