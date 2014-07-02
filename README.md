@@ -1,7 +1,10 @@
 # QiitaMatome
 
+[![Build Status](https://travis-ci.org/tbpgr/qiita_matome.png?branch=master)](https://travis-ci.org/tbpgr/qiita_matome)
+[![Coverage Status](https://coveralls.io/repos/tbpgr/qiita_matome/badge.png)](https://coveralls.io/r/tbpgr/qiita_matome)
+[![Code Climate](https://codeclimate.com/github/tbpgr/qiita_matome.png)](https://codeclimate.com/github/tbpgr/qiita_matome)
+
 Qiitaのまとめページジェネレーター  
-※現在作成途中。完成したら RubyGemsに登録します
 
 ## 概要
 
