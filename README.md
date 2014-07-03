@@ -1,5 +1,6 @@
 # QiitaMatome
 
+[![Gem Version](https://badge.fury.io/rb/qiita_matome.svg)](http://badge.fury.io/rb/qiita_matome)
 [![Build Status](https://travis-ci.org/tbpgr/qiita_matome.png?branch=master)](https://travis-ci.org/tbpgr/qiita_matome)
 [![Coverage Status](https://coveralls.io/repos/tbpgr/qiita_matome/badge.png)](https://coveralls.io/r/tbpgr/qiita_matome)
 [![Code Climate](https://codeclimate.com/github/tbpgr/qiita_matome.png)](https://codeclimate.com/github/tbpgr/qiita_matome)
