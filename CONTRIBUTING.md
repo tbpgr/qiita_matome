@@ -36,8 +36,6 @@ Inspecting 32 file
 * 事情があって **例外的に** 単体テストの作成をしない場合は、手動テストの項目・手順を *manual_test_docs* に作成してください。
 
     ※なぜ単体テストを作成しないのか、 **理由** を *pull request* 時のコメントに記述してください。  
-    例えば、 *lib / qiita_json_loader.rb* などは、Qiita のWeb API へのアクセスが主であるため、  
-    あえて単体テストを作成していません。  
 
 * テストの作成は [*rspec_piccolo gem*](https://github.com/tbpgr/rspec_piccolo) を利用していただけると体裁が整って嬉しいですが必須ではありません。
 
