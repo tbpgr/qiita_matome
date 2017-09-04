@@ -56,7 +56,7 @@ tag "Ruby"
 title "some title"
 output_file "output.md"
 sort_type "created_at_desc"
-display_columns [:no, :title, :created_at, :stock_count]
+display_columns [:no, :title, :created_at, :likes_count]
 excludes []
     EOS
 
@@ -67,7 +67,7 @@ excludes []
       'created_at' => '2014-06-18 22:37:54 +0900',
       'updated_at' => '2014-06-26 02:25:11 +0900',
       'tags' => [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-      'stock_count' => 1
+      'likes_count' => 1
       ),
       QiitaMatome::Article.new(
       'user' => { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -75,7 +75,7 @@ excludes []
       'created_at' => '2014-06-18 22:37:54 +0900',
       'updated_at' => '2014-06-26 02:25:11 +0900',
       'tags' => [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-      'stock_count' => 2
+      'likes_count' => 2
       ),
       QiitaMatome::Article.new(
       'user' => { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -83,7 +83,7 @@ excludes []
       'created_at' => '2014-06-18 22:37:54 +0900',
       'updated_at' => '2014-06-26 02:25:11 +0900',
       'tags' => [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-      'stock_count' => 3
+      'likes_count' => 3
       )
     ])
 
@@ -98,7 +98,7 @@ excludes []
 
 更新日: 2014/04/01 00:00:00
 
-|No.|タイトル|作成日|ストック数|
+|No.|タイトル|作成日|いいね数|
 |--:|:--|:--:|--:|
 |1|[title3](http://qiita.com/tbpgr/items/)|2014/06/18 22:37:54|3|
 |2|[title2](http://qiita.com/tbpgr/items/)|2014/06/18 22:37:54|2|

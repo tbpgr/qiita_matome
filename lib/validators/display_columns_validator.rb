@@ -8,7 +8,7 @@ module QiitaMatome
     class DisplayColumnsValidator
       # rubocop:disable LineLength
       DISPLAY_COLUMNS_TO_SYM_ERROR = "Invalid display_columns. Display_columns's class must be implement 'to_sym' method."
-      DISPLAY_COLUMNS_ERROR = "Invalid display_columns '%s'. Display_columns must be :title, :created_at, :updated_at, :stock_count or :no"
+      DISPLAY_COLUMNS_ERROR = "Invalid display_columns '%s'. Display_columns must be :title, :created_at, :updated_at, :likes_count or :no"
       # rubocop:enable LineLength
       DCC = Display::Consts::COLUMNS
 

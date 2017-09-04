@@ -2,7 +2,7 @@
 
 更新日: 2014/07/01 22:51:13
 
-|No.|タイトル|作成日|ストック数|
+|No.|タイトル|作成日|いいね数|
 |--:|:--|:--:|--:|
 |1|[RuboCop  Style/AccessModifierIndentation](http://qiita.com/tbpgr/items/706d2b93052154772f18)|2014/06/15 00:53:36|4|
 |2|[RuboCop  Style/AlignHash  EnforcedColonStyle](http://qiita.com/tbpgr/items/b23d30a3b6284e800b60)|2014/06/16 21:41:26|4|

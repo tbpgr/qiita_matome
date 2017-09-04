@@ -80,7 +80,7 @@ describe QiitaMatome::Sort::Sorter do
         created_at: '2014-06-18 22:37:54 +0900',
         updated_at: '2014-06-26 02:25:11 +0900',
         tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-        stock_count: 2
+        likes_count: 2
       ),
       QiitaMatome::Article.new(
         user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -88,7 +88,7 @@ describe QiitaMatome::Sort::Sorter do
         created_at: '2014-06-18 22:37:53 +0900',
         updated_at: '2014-06-26 02:25:09 +0900',
         tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-        stock_count: 3
+        likes_count: 3
       ),
       QiitaMatome::Article.new(
         user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -96,7 +96,7 @@ describe QiitaMatome::Sort::Sorter do
         created_at: '2014-06-18 22:37:52 +0900',
         updated_at: '2014-06-26 02:25:10 +0900',
         tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-        stock_count: 10
+        likes_count: 10
       )
     ]
     cases = [
@@ -112,7 +112,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:52 +0900',
             updated_at: '2014-06-26 02:25:10 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 10
+            likes_count: 10
           ),
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -120,7 +120,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:53 +0900',
             updated_at: '2014-06-26 02:25:09 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 3
+            likes_count: 3
           ),
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -128,7 +128,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:54 +0900',
             updated_at: '2014-06-26 02:25:11 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 2
+            likes_count: 2
           )
         ]
       },
@@ -144,7 +144,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:54 +0900',
             updated_at: '2014-06-26 02:25:11 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 2
+            likes_count: 2
           ),
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -152,7 +152,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:53 +0900',
             updated_at: '2014-06-26 02:25:09 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 3
+            likes_count: 3
           ),
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -160,7 +160,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:52 +0900',
             updated_at: '2014-06-26 02:25:10 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 10
+            likes_count: 10
           )
         ]
       },
@@ -176,7 +176,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:53 +0900',
             updated_at: '2014-06-26 02:25:09 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 3
+            likes_count: 3
           ),
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -184,7 +184,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:52 +0900',
             updated_at: '2014-06-26 02:25:10 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 10
+            likes_count: 10
           ),
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -192,7 +192,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:54 +0900',
             updated_at: '2014-06-26 02:25:11 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 2
+            likes_count: 2
           )
         ]
       },
@@ -208,7 +208,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:54 +0900',
             updated_at: '2014-06-26 02:25:11 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 2
+            likes_count: 2
           ),
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -216,7 +216,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:52 +0900',
             updated_at: '2014-06-26 02:25:10 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 10
+            likes_count: 10
           ),
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -224,7 +224,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:53 +0900',
             updated_at: '2014-06-26 02:25:09 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 3
+            likes_count: 3
           )
         ]
       },
@@ -240,7 +240,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:54 +0900',
             updated_at: '2014-06-26 02:25:11 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 2
+            likes_count: 2
           ),
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -248,7 +248,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:53 +0900',
             updated_at: '2014-06-26 02:25:09 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 3
+            likes_count: 3
           ),
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -256,7 +256,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:52 +0900',
             updated_at: '2014-06-26 02:25:10 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 10
+            likes_count: 10
           )
         ]
       },
@@ -272,7 +272,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:52 +0900',
             updated_at: '2014-06-26 02:25:10 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 10
+            likes_count: 10
           ),
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -280,7 +280,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:53 +0900',
             updated_at: '2014-06-26 02:25:09 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 3
+            likes_count: 3
           ),
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -288,15 +288,15 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:54 +0900',
             updated_at: '2014-06-26 02:25:11 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 2
+            likes_count: 2
           )
         ]
       },
       {
         case_no: 7,
-        case_title: 'stock_count asc',
+        case_title: 'likes_count asc',
         articles: ARTICLES,
-        sort_type: QiitaMatome::Sort::Consts::STOCK_COUNT_ASC,
+        sort_type: QiitaMatome::Sort::Consts::LIKES_COUNT_ASC,
         expected: [
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -304,7 +304,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:54 +0900',
             updated_at: '2014-06-26 02:25:11 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 2
+            likes_count: 2
           ),
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -312,7 +312,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:53 +0900',
             updated_at: '2014-06-26 02:25:09 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 3
+            likes_count: 3
           ),
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -320,15 +320,15 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:52 +0900',
             updated_at: '2014-06-26 02:25:10 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 10
+            likes_count: 10
           )
         ]
       },
       {
         case_no: 8,
-        case_title: 'stock_count desc',
+        case_title: 'likes_count desc',
         articles: ARTICLES,
-        sort_type: QiitaMatome::Sort::Consts::STOCK_COUNT_DESC,
+        sort_type: QiitaMatome::Sort::Consts::LIKES_COUNT_DESC,
         expected: [
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -336,7 +336,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:52 +0900',
             updated_at: '2014-06-26 02:25:10 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 10
+            likes_count: 10
           ),
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -344,7 +344,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:53 +0900',
             updated_at: '2014-06-26 02:25:09 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 3
+            likes_count: 3
           ),
           QiitaMatome::Article.new(
             user: { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
@@ -352,7 +352,7 @@ describe QiitaMatome::Sort::Sorter do
             created_at: '2014-06-18 22:37:54 +0900',
             updated_at: '2014-06-26 02:25:11 +0900',
             tags: [{ 'name' => 'Ruby', 'url_name' => 'ruby', 'icon_url' => '', 'versions' => [] }],
-            stock_count: 2
+            likes_count: 2
           )
         ]
       }
