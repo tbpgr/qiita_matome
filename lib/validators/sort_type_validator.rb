@@ -7,7 +7,7 @@ module QiitaMatome
     # SortTypeValidator
     class SortTypeValidator
       # rubocop:disable LineLength
-      SORT_TYPE_ERROR = "invalid sort_type '%s'. sort_type must be 'created_at_asc', 'created_at_desc', 'updated_at_asc', 'updated_at_desc', 'title_date_asc', 'title_date_desc', 'stock_count_asc' or 'stock_count_desc'"
+      SORT_TYPE_ERROR = "invalid sort_type '%s'. sort_type must be 'created_at_asc', 'created_at_desc', 'updated_at_asc', 'updated_at_desc', 'title_date_asc', 'title_date_desc', 'likes_count_asc' or 'likes_count_desc'"
       # rubocop:enable LineLength
 
       def self.validate(sort_type)

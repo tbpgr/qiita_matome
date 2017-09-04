@@ -19,10 +19,8 @@ module QiitaMatome
         Consts::UPDATED_AT_DESC => { send_method: :sort_desc, sort_key: :updated_at },
         Consts::TITLE_ASC => { send_method: :sort_asc, sort_key: :title },
         Consts::TITLE_DESC => { send_method: :sort_desc, sort_key: :title },
-        #Consts::STOCK_COUNT_ASC => { send_method: :sort_asc, sort_key: :likes_count },
-        #Consts::STOCK_COUNT_DESC => { send_method: :sort_desc, sort_key: :likes_count }
         Consts::LIKES_COUNT_ASC => { send_method: :sort_asc, sort_key: :likes_count },
-        Consts::LIKES_COUNT_DESC => { send_method: :sort_desc, sort_key: :likes_count }
+        Consts::LIKES_COUNT_DESC => { send_method: :sort_desc, sort_key: :likes_count },
       }
       # rubocop:enable LineLength
 

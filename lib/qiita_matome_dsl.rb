@@ -24,7 +24,7 @@ module QiitaMatome
       @qiita_matome = QiitaMatome::DslModel.new
       @qiita_matome.output_file = 'matome.md'
       @qiita_matome.sort_type = 'created_at_desc'
-      @qiita_matome.display_columns = [:no, :title, :create_date, :stocked]
+      @qiita_matome.display_columns = [:no, :title, :create_date, :likes_count]
       @qiita_matome.excludes = []
     end
   end

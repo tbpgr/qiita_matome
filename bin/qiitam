@@ -1,8 +1,14 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 
-require 'qiita_matome_core'
-require 'qiita_matome/version'
+begin
+  require 'qiita_matome_core'
+  require 'qiita_matome/version'
+rescue LoadError
+  $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+  require 'qiita_matome_core'
+  require 'qiita_matome/version'
+end
 require 'thor'
 
 module QiitaMatome
