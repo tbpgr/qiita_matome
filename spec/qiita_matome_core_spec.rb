@@ -62,7 +62,7 @@ excludes []
 
     MOCK_ARTICLES = QiitaMatome::Articles.new([
       QiitaMatome::Article.new(
-      'user' => { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
+      'user' => { 'permanent_id' => 99_999, 'id' => 'tbpgr', 'profile_image_url' => '' },
       'title' => 'title1',
       'created_at' => '2014-06-18 22:37:54 +0900',
       'updated_at' => '2014-06-26 02:25:11 +0900',
@@ -70,7 +70,7 @@ excludes []
       'likes_count' => 1
       ),
       QiitaMatome::Article.new(
-      'user' => { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
+      'user' => { 'permanent_id' => 99_999, 'id' => 'tbpgr', 'profile_image_url' => '' },
       'title' => 'title2',
       'created_at' => '2014-06-18 22:37:54 +0900',
       'updated_at' => '2014-06-26 02:25:11 +0900',
@@ -78,7 +78,7 @@ excludes []
       'likes_count' => 2
       ),
       QiitaMatome::Article.new(
-      'user' => { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
+      'user' => { 'permanent_id' => 99_999, 'id' => 'tbpgr', 'profile_image_url' => '' },
       'title' => 'title3',
       'created_at' => '2014-06-18 22:37:54 +0900',
       'updated_at' => '2014-06-26 02:25:11 +0900',

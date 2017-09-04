@@ -93,8 +93,8 @@ describe QiitaMatome::Article do
         case_title: '2 list case',
         init: {
           'title' => 'title | subtitle',
-          'uuid' => '123',
-          'user' => { 'url_name' => 'tbpgr' }
+          'id' => '123',
+          'user' => { 'id' => 'tbpgr' }
         },
         expected: '[title  subtitle](http://qiita.com/tbpgr/items/123)'
       }

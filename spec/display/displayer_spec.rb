@@ -135,7 +135,7 @@ describe QiitaMatome::Display::Displayer do
 
   context :table_header do
     TABLE_HEADER_ARTICLE = QiitaMatome::Article.new(
-      'user' => { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
+      'user' => { 'permanent_id' => 99_999, 'id' => 'tbpgr', 'profile_image_url' => '' },
       'title' => 'title1',
       'created_at' => '2014-06-18 22:37:54 +0900',
       'updated_at' => '2014-06-26 02:25:11 +0900',
@@ -196,8 +196,8 @@ describe QiitaMatome::Display::Displayer do
 
   context :display_article do
     DISPLAY_ARTICLE = QiitaMatome::Article.new(
-        'uuid' => 'd1ed617093609ccedbee',
-        'user' => { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
+        'id' => 'd1ed617093609ccedbee',
+        'user' => { 'permanent_id' => 99_999, 'id' => 'tbpgr', 'profile_image_url' => '' },
         'title' => 'title1',
         'created_at' => '2014-06-18 22:37:54 +0900',
         'updated_at' => '2014-06-26 02:25:11 +0900',
@@ -257,8 +257,8 @@ describe QiitaMatome::Display::Displayer do
   context :display_articles do
     DISPLAY_ARTICLES = [
       QiitaMatome::Article.new(
-        'uuid' => 'd1ed617093609ccedbee',
-        'user' => { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
+        'id' => 'd1ed617093609ccedbee',
+        'user' => { 'permanent_id' => 99_999, 'id' => 'tbpgr', 'profile_image_url' => '' },
         'title' => 'title1',
         'created_at' => '2014-06-18 22:37:54 +0900',
         'updated_at' => '2014-06-26 02:25:11 +0900',
@@ -266,8 +266,8 @@ describe QiitaMatome::Display::Displayer do
         'likes_count' => 2
       ),
       QiitaMatome::Article.new(
-        'uuid' => 'd1ed617093609ccedbef',
-        'user' => { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
+        'id' => 'd1ed617093609ccedbef',
+        'user' => { 'permanent_id' => 99_999, 'id' => 'tbpgr', 'profile_image_url' => '' },
         'title' => 'title2',
         'created_at' => '2014-06-18 22:37:53 +0900',
         'updated_at' => '2014-06-26 02:25:09 +0900',
@@ -275,8 +275,8 @@ describe QiitaMatome::Display::Displayer do
         'likes_count' => 3
       ),
       QiitaMatome::Article.new(
-        'uuid' => 'd1ed617093609ccedbeg',
-        'user' => { 'id' => 99_999, 'url_name' => 'tbpgr', 'profile_image_url' => '' },
+        'id' => 'd1ed617093609ccedbeg',
+        'user' => { 'permanent_id' => 99_999, 'id' => 'tbpgr', 'profile_image_url' => '' },
         'title' => 'title3',
         'created_at' => '2014-06-18 22:37:52 +0900',
         'updated_at' => '2014-06-26 02:25:10 +0900',

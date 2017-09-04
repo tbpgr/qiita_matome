@@ -240,34 +240,34 @@ describe QiitaMatome::Articles do
     cases = [
       {
         case_no: 1,
-        case_title: 'exclude uuid case',
+        case_title: 'exclude id case',
         init: [
-          QiitaMatome::Article.new('title' => 'title1', 'uuid' => '1'),
-          QiitaMatome::Article.new('title' => 'title2', 'uuid' => '2'),
-          QiitaMatome::Article.new('title' => 'title3', 'uuid' => '3'),
-          QiitaMatome::Article.new('title' => 'title4', 'uuid' => '4')
+          QiitaMatome::Article.new('title' => 'title1', 'id' => '1'),
+          QiitaMatome::Article.new('title' => 'title2', 'id' => '2'),
+          QiitaMatome::Article.new('title' => 'title3', 'id' => '3'),
+          QiitaMatome::Article.new('title' => 'title4', 'id' => '4')
         ],
         uuids: %w(2 3),
         expected: [
-          QiitaMatome::Article.new('title' => 'title1', 'uuid' => '1'),
-          QiitaMatome::Article.new('title' => 'title4', 'uuid' => '4')
+          QiitaMatome::Article.new('title' => 'title1', 'id' => '1'),
+          QiitaMatome::Article.new('title' => 'title4', 'id' => '4')
         ]
       },
       {
         case_no: 2,
-        case_title: 'exclude uuid case(no target)',
+        case_title: 'exclude id case(no target)',
         init: [
-          QiitaMatome::Article.new('title' => 'title1', 'uuid' => '1'),
-          QiitaMatome::Article.new('title' => 'title2', 'uuid' => '2'),
-          QiitaMatome::Article.new('title' => 'title3', 'uuid' => '3'),
-          QiitaMatome::Article.new('title' => 'title4', 'uuid' => '4')
+          QiitaMatome::Article.new('title' => 'title1', 'id' => '1'),
+          QiitaMatome::Article.new('title' => 'title2', 'id' => '2'),
+          QiitaMatome::Article.new('title' => 'title3', 'id' => '3'),
+          QiitaMatome::Article.new('title' => 'title4', 'id' => '4')
         ],
         uuids: ['5'],
         expected: [
-          QiitaMatome::Article.new('title' => 'title1', 'uuid' => '1'),
-          QiitaMatome::Article.new('title' => 'title2', 'uuid' => '2'),
-          QiitaMatome::Article.new('title' => 'title3', 'uuid' => '3'),
-          QiitaMatome::Article.new('title' => 'title4', 'uuid' => '4')
+          QiitaMatome::Article.new('title' => 'title1', 'id' => '1'),
+          QiitaMatome::Article.new('title' => 'title2', 'id' => '2'),
+          QiitaMatome::Article.new('title' => 'title3', 'id' => '3'),
+          QiitaMatome::Article.new('title' => 'title4', 'id' => '4')
         ]
       }
     ]
