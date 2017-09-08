@@ -12,7 +12,7 @@ Qiitaのまとめページジェネレーター
 Qiitaの特定ユーザー、特定タグのリンクを一覧化したまとめ記事を生成する。
 
 ## 前提
-* 認証不要(認証不要APIである、`GET /api/v1/users/:url_name/items` のみを利用する)
+* 認証不要(認証不要APIである、`GET /api/v2/users/:url_name/items` のみを利用する)
 * 任意のユーザーの任意の1つのタグに限定してまとめ記事を作成する
 
     ※基本的には自分のユーザーのまとめを作ることを想定しています
@@ -77,15 +77,15 @@ title "your value"
 # output_file's default value => "matome.md"
 output_file "matome.md"
 
-# Set your matome sort type. you can choose created_at_asc/desc, updated_at_asc/desc, title_asc/desc, stock_count_asc/desc
+# Set your matome sort type. you can choose created_at_asc/desc, updated_at_asc/desc, title_asc/desc, likes_count_asc/desc
 # sort_type allow only String
 # sort_type's default value => "created_at_desc"
 sort_type "created_at_desc"
 
-# Set your matome display columns. you can choose :title, :created_at, :updated_at, :stock_count and :no
+# Set your matome display columns. you can choose :title, :created_at, :updated_at, :likes_count and :no
 # display_columns allow only Array
-# display_columns's default value => [:no, :title, :created_at, :stock_count]
-display_columns [:no, :title, :created_at, :stock_count]
+# display_columns's default value => [:no, :title, :created_at, :likes_count]
+display_columns [:no, :title, :created_at, :likes_count]
 
 # Set your matome exclude files
 # excludes allow only Array
@@ -102,7 +102,7 @@ excludes []
 |title|○|なし|まとめ記事タイトル|
 |output_file|○|matome.md|出力パス|
 |sort_type|×|created_at_desc|まとめ記事内のソート順。詳しくはソート種別参照|
-|display_columns|×|[:no, :title, :created_at, :stock_count]|まとめ記事の表示項目指定。指定順に並ぶ。詳しくは表示項目参照|
+|display_columns|×|[:no, :title, :created_at, :likes_count]|まとめ記事の表示項目指定。指定順に並ぶ。詳しくは表示項目参照|
 |exclude|×|[id1, id2...]|除外記事ID（uuid）を配列で指定。例えば、まとめ記事自信を除外するために指定|
 
 ### ソート種別
@@ -115,8 +115,8 @@ excludes []
 |updated_at_desc|更新日降順|
 |title_asc|記事タイトル昇順|
 |title_desc|記事タイトル降順|
-|stock_count_asc|ストック数昇順|
-|stock_count_desc|ストック数降順。つまり人気記事順|
+|likes_count_asc|いいね数昇順|
+|likes_count_desc|いいね数降順。つまり人気記事順|
 
 ### 表示項目
 
@@ -125,7 +125,7 @@ excludes []
 |:title|記事タイトル。該当記事へのリンクになる|
 |:created_at|初回投稿日 「YYYY/MM/DD hh:mi:ss」 フォーマット|
 |:updated_at|更新日 「YYYY/MM/DD hh:mi:ss」 フォーマット|
-|:stock_count|ストック数|
+|:likes_count|いいね数|
 |:no|連番|
 
 ## インストール
@@ -167,7 +167,7 @@ tag             "rubocop"
 title           "RuboCop まとめ タイトル昇順"
 output_file     "./matome_title_asc.md"
 sort_type       "title_asc"
-display_columns [:no, :title, :created_at, :stock_count]
+display_columns [:no, :title, :created_at, :likes_count]
 # まとめ記事を除外
 excludes        ['edbfecb6a6789dd54f47']
 ~~~

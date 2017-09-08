@@ -11,8 +11,8 @@ module QiitaMatome
       UPDATED_AT_DESC = 'updated_at_desc'.freeze
       TITLE_ASC = 'title_asc'.freeze
       TITLE_DESC = 'title_desc'.freeze
-      STOCK_COUNT_ASC = 'stock_count_asc'.freeze
-      STOCK_COUNT_DESC = 'stock_count_desc'.freeze
+      LIKES_COUNT_ASC = 'likes_count_asc'.freeze
+      LIKES_COUNT_DESC = 'likes_count_desc'.freeze
       ALL_TYPES = [
         CREATED_AT_ASC,
         CREATED_AT_DESC,
@@ -20,8 +20,8 @@ module QiitaMatome
         UPDATED_AT_DESC,
         TITLE_ASC,
         TITLE_DESC,
-        STOCK_COUNT_ASC,
-        STOCK_COUNT_DESC
+        LIKES_COUNT_ASC,
+        LIKES_COUNT_DESC,
       ]
     end
   end

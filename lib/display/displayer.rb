@@ -11,7 +11,7 @@ module QiitaMatome
       attr_reader :title, :articles, :display_columns
 
       def initialize(title, articles,
-          display_columns = [:no, :title, :created_at, :stock_count])
+          display_columns = [:no, :title, :created_at, :likes_count])
         Validators::ArticlesValidator.validate(articles)
         Validators::ArticleValidator.validate(articles)
         display_columns_list = Array(display_columns)
@@ -43,7 +43,7 @@ module QiitaMatome
                   when :title then article.title_link
                   when :created_at then  article.created_at_ymdhms
                   when :updated_at then  article.updated_at_ymdhms
-                  when :stock_count then article.stock_count
+                  when :likes_count then article.likes_count
           end
         end
         "|#{disp.join('|')}|"

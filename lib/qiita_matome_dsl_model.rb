@@ -24,11 +24,11 @@ module QiitaMatome
 
     # Set your matome sort type.
     # you can choose created_at_asc/desc, updated_at_asc/desc,
-    # title_asc/desc, stock_count_asc/desc
+    # title_asc/desc, likes_count_asc/desc
     attr_accessor :sort_type
 
     # Set your matome display columns.
-    # you can choose :title, :create_date, :update_date, :stocked and :no
+    # you can choose :title, :create_date, :update_date, :likes_count and :no
     attr_accessor :display_columns
 
     # Set your matome exclude files

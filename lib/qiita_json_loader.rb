@@ -8,7 +8,7 @@ module QiitaMatome
   # QiitaMatome::QiitaJsonLoader
   class QiitaJsonLoader
     attr_reader :user, :articles
-    QIITA_URL = 'https://qiita.com/api/v1/users/%s/items?page=%s&per_page=%s'
+    QIITA_URL = 'https://qiita.com/api/v2/users/%s/items?page=%s&per_page=%s'
     PER_PAGE = 25
     PAGE_LIMIT = 100
 
